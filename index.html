@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aarohi Bridal Studio · Bridal & festive wear, Rajkot</title>
+<meta name="description" content="Bridal, sider, engagement and festive wear, designed and stitched in Rajkot. Browse the collection, enquire about an outfit and book a trial.">
+<meta name="theme-color" content="#6B1E2E">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&family=Hind+Vadodara:wght@400;500;600&display=swap">
+<style>
+/* Colours below are defaults; the CONFIG object in the script overrides them. */
+:root{
+  --wine:#6B1E2E; --wine-deep:#4A1220; --gold:#C9A04E; --gold-text:#8A6424;
+  --ivory:#FBF6EE; --card:#FFFDF9; --ink:#2A1A1E; --ink-soft:#5E4B50; --line:rgba(74,18,32,.12);
+  --blush:#F3E4DE;
+  --f-display:"Cormorant Garamond","Hind Vadodara",Georgia,"Times New Roman",serif;
+  --f-body:"Jost","Hind Vadodara","Noto Sans Gujarati",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-gu:"Hind Vadodara","Noto Sans Gujarati","Shruti",system-ui,sans-serif;
+  --radius:18px; --radius-sm:12px;
+  --shadow:0 1px 2px rgba(42,26,30,.06),0 10px 30px -12px rgba(74,18,32,.25);
+  --shadow-lg:0 2px 6px rgba(42,26,30,.08),0 30px 60px -20px rgba(74,18,32,.35);
+  --header-h:64px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 16px/1.6 var(--f-body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+@supports (overflow:clip){body{overflow-x:clip}}
+html[lang="gu"] body{font-family:var(--f-gu)}
+img,svg{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+section{scroll-margin-top:var(--header-h)}
+
+/* ---------- Type ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);font-weight:500;margin:0 0 14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+html[lang="gu"] .eyebrow{letter-spacing:.04em;text-transform:none;font-size:14px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;color:var(--wine-deep);margin:0;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(34px,7.5vw,54px)}
+h3{font-size:24px}
+html[lang="gu"] h2,html[lang="gu"] h3,html[lang="gu"] .gu-aware{font-family:var(--f-gu);letter-spacing:0;line-height:1.3}
+html[lang="gu"] h2{font-size:clamp(28px,6vw,42px)}
+.lede{color:var(--ink-soft);font-size:17px;max-width:56ch;margin:14px 0 0}
+.sec-head{margin-bottom:28px}
+.sec{padding:76px 0}
+@media(min-width:900px){.sec{padding:110px 0}}
+.ornament{display:block;width:120px;height:14px;margin:18px 0 0;color:var(--gold)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 26px;border-radius:999px;border:1.5px solid transparent;font-weight:500;font-size:15.5px;letter-spacing:.02em;text-decoration:none;transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease,color .2s ease}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--wine);color:#fff;box-shadow:0 10px 24px -10px rgba(107,30,46,.7)}
+.btn-primary:hover{background:var(--wine-deep)}
+.btn-secondary{background:transparent;color:var(--wine);border-color:color-mix(in srgb,var(--wine) 45%,transparent)}
+.btn-secondary:hover{background:color-mix(in srgb,var(--wine) 7%,transparent)}
+.btn-gold{background:var(--gold);color:var(--wine-deep)}
+.btn-sm{min-height:42px;padding:9px 16px;font-size:14px}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- Header ---------- */
+.header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--ivory) 88%,transparent);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(74,18,32,.5)}
+.header .wrap{display:flex;align-items:center;gap:12px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0;margin-right:auto}
+.monogram{width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--wine);color:var(--gold);font:600 20px/1 var(--f-display);box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold) 55%,transparent)}
+.brand-name{font:600 20px/1.1 var(--f-display);color:var(--wine-deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-name small{display:block;font:500 10.5px/1.2 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text);margin-top:2px}
+.nav{display:none;gap:4px}
+.nav a{position:relative;padding:10px 14px;text-decoration:none;font-size:15px;color:var(--ink-soft);border-radius:999px;transition:color .2s,background-color .2s;white-space:nowrap}
+.nav a:hover{color:var(--wine)}
+.nav a.active{color:var(--wine);background:color-mix(in srgb,var(--wine) 8%,transparent)}
+.lang-toggle{flex:none;min-height:40px;padding:6px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-size:14px;font-weight:500;color:var(--wine)}
+.lang-toggle span[lang="gu"]{font-family:var(--f-gu)}
+.menu-btn{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:6px 14px;border-radius:999px;border:0;background:var(--wine);color:#fff;font-size:14px;font-weight:500}
+.menu-btn svg{width:18px;height:18px}
+.mobile-menu{position:absolute;left:12px;right:12px;top:calc(var(--header-h) - 4px);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:8px;display:none;border:1px solid var(--line)}
+.mobile-menu.open{display:block;animation:drop .22s ease-out}
+.mobile-menu a{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:12px;text-decoration:none;font-size:17px;color:var(--ink)}
+.mobile-menu a.active{background:color-mix(in srgb,var(--wine) 8%,transparent);color:var(--wine)}
+.mobile-menu a span{font-family:var(--f-display);color:var(--gold-text);font-size:15px}
+@keyframes drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media(min-width:960px){.nav{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+@media(max-width:440px){.menu-btn{padding:6px 11px}.menu-btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.lang-toggle{padding:6px 11px}}
+@media(max-width:360px){.brand-name small{display:none}.brand-name{font-size:18px}}
+@media(max-width:600px){.chat-fab{min-height:48px;padding:7px 16px 7px 8px;font-size:14px}.chat-fab .dot{width:32px;height:32px}.chat-pop{bottom:calc(76px + env(safe-area-inset-bottom))}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;padding:28px 0 64px;min-height:calc(100svh - var(--header-h))}
+.hero::before{content:"";position:absolute;inset:auto -20% -40% -20%;height:70%;background:radial-gradient(closest-side,color-mix(in srgb,var(--blush) 90%,transparent),transparent);pointer-events:none}
+#shimmer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:30px;align-items:center}
+.hero-copy{text-align:center}
+.hero h1{font-size:clamp(46px,12.5vw,92px);font-weight:600;line-height:.98}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--gold-text);font-size:.52em;letter-spacing:.01em;margin-top:6px}
+.tagline{font-size:18px;color:var(--ink-soft);margin:18px auto 0;max-width:34ch}
+.tagline-gu{font-family:var(--f-gu);font-size:16.5px;color:var(--wine);margin:6px auto 0;opacity:.9}
+.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+.hero-cta .btn{flex:1 1 150px;max-width:230px}
+.hero-facts{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin:22px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-soft)}
+.hero-facts li{display:flex;align-items:center;gap:7px}
+.hero-facts li::before{content:"";width:5px;height:5px;transform:rotate(45deg);background:var(--gold)}
+@media(max-width:899px){.hero-copy .eyebrow::before{display:none}}
+@media(min-width:900px){
+  .hero{padding:40px 0 90px;display:flex;align-items:center}
+  .hero .wrap{grid-template-columns:1.05fr 1fr;gap:40px}
+  .hero-copy{text-align:left}
+  .tagline,.tagline-gu{margin-left:0}
+  .hero-cta,.hero-facts{justify-content:flex-start}
+}
+
+/* 3D fanned stack */
+.stack-zone{position:relative;height:clamp(330px,92vw,520px);perspective:1300px;perspective-origin:50% 40%;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.stack{position:absolute;left:50%;top:50%;width:clamp(178px,50vw,290px);aspect-ratio:3/4;transform-style:preserve-3d;transform:translate(-50%,-50%);animation:float 7s ease-in-out infinite}
+.fan-card{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:var(--card);box-shadow:var(--shadow-lg);transform-origin:50% 100%;will-change:transform;border:4px solid var(--card);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.stack.live .fan-card{transition:transform .25s ease-out}
+.fan-card svg,.fan-card img{width:100%;height:100%;object-fit:cover}
+.fan-label{position:absolute;left:10px;right:10px;bottom:10px;padding:9px 12px;border-radius:12px;background:color-mix(in srgb,var(--card) 90%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:12.5px;line-height:1.3;color:var(--ink)}
+.fan-label b{display:block;font:600 16px/1.15 var(--f-display);color:var(--wine-deep)}
+.stack-hint{position:absolute;left:0;right:0;bottom:-6px;text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text)}
+html[lang="gu"] .stack-hint{letter-spacing:.02em;text-transform:none;font-size:13.5px}
+@keyframes float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 8px))}}
+
+/* ---------- Trust strip ---------- */
+.strip{background:var(--wine);color:#F7EBDD}
+.strip ul{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 18px}
+.strip li{display:flex;gap:12px;align-items:center;font-size:14.5px;line-height:1.35}
+.strip svg{width:26px;height:26px;flex:none;color:var(--gold)}
+@media(min-width:820px){.strip ul{grid-template-columns:repeat(4,1fr);padding:26px 0}}
+
+/* ---------- Collection ---------- */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 10px;margin:0 -16px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+@media(min-width:720px){.chips{margin:0 0 22px;padding:4px 0 10px;flex-wrap:wrap}}
+.chip{flex:none;min-height:42px;padding:8px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-size:14.5px;color:var(--ink-soft);transition:all .2s}
+.chip:hover{border-color:color-mix(in srgb,var(--wine) 40%,transparent);color:var(--wine)}
+.chip[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);color:#fff}
+.chip .n{opacity:.65;margin-left:4px;font-size:12.5px}
+.result-count{font-size:13.5px;color:var(--ink-soft);margin:-6px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}}
+@media(min-width:1080px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.o-card{position:relative;display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transform-style:preserve-3d;transition:transform .35s ease,box-shadow .35s ease;animation:rise .5s ease both}
+.o-card:hover{box-shadow:var(--shadow-lg)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.o-media{position:relative;display:block;width:100%;aspect-ratio:3/4;padding:0;border:0;background:var(--blush);overflow:hidden}
+.o-media svg,.o-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.o-card:hover .o-media svg,.o-card:hover .o-media img{transform:scale(1.035)}
+.o-media .sheen{position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.28),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.o-card.tilting .sheen{opacity:1}
+.o-tag{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--card) 92%,transparent);font-size:11.5px;font-weight:500;letter-spacing:.06em;color:var(--wine)}
+.o-body{display:flex;flex-direction:column;gap:4px;padding:12px 12px 14px;flex:1}
+@media(min-width:720px){.o-body{padding:16px 16px 18px}}
+.o-meta{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin:0;font-weight:500}
+html[lang="gu"] .o-meta{letter-spacing:.02em;text-transform:none;font-size:12.5px}
+.o-name{font:600 18px/1.15 var(--f-display);color:var(--wine-deep);margin:2px 0 0}
+@media(min-width:720px){.o-name{font-size:21px}}
+.o-price{font-size:13.5px;color:var(--ink);margin:2px 0 10px}
+.o-price span{color:var(--ink-soft)}
+.o-body .btn{margin-top:auto;width:100%;min-height:42px;padding:8px 10px;font-size:13.5px;line-height:1.25;text-align:center}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--ink-soft)}
+
+/* ---------- Story ---------- */
+.story{background:linear-gradient(180deg,var(--ivory),var(--blush) 60%,var(--ivory))}
+.story-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.story-grid{grid-template-columns:1fr 1.05fr;gap:64px}}
+.sample-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--gold-text) 60%,transparent);color:var(--gold-text);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;background:color-mix(in srgb,var(--card) 70%,transparent)}
+.story-text #storyBody p{color:var(--ink-soft);font-size:17px;margin:16px 0 0}
+.story-text #storyBody p.first::first-letter{font:600 3.4em/.8 var(--f-display);float:left;margin:6px 10px 0 0;color:var(--wine)}
+.steps{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.steps li{padding:12px 14px;border-radius:var(--radius-sm);background:color-mix(in srgb,var(--card) 80%,transparent);border:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.steps b{display:block;font:600 19px/1.2 var(--f-display);color:var(--wine-deep)}
+.made-in{margin-top:22px;padding:18px 20px;border-radius:var(--radius);background:var(--wine);color:#F7EBDD;display:flex;gap:14px;align-items:flex-start}
+.made-in svg{width:34px;height:34px;color:var(--gold);flex:none}
+.made-in strong{display:block;font:600 22px/1.15 var(--f-display);color:#fff}
+html[lang="gu"] .made-in strong{font-family:var(--f-gu);font-size:19px}
+.made-in p{margin:4px 0 0!important;color:#EBD9C9!important;font-size:15px!important}
+.scene{position:relative;height:clamp(420px,118vw,580px);max-width:560px;margin:0 auto;width:100%}
+.layer{position:absolute;will-change:transform;transition:transform .1s linear}
+.layer-inner{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--card);border:5px solid var(--card)}
+.layer-inner svg{width:100%;height:auto}
+.layer .tag{position:absolute;z-index:2;top:-12px;left:14px;padding:4px 12px;border-radius:999px;background:var(--wine);color:#fff;font-size:12px;letter-spacing:.06em;box-shadow:var(--shadow)}
+.layer .tag i{font-style:normal;color:var(--gold);margin-right:6px;font-family:var(--f-display);font-size:14px}
+.l1{left:0;top:2%;width:52%}.l1 .layer-inner{transform:rotate(-5deg)}
+.l2{right:2%;top:7%;width:46%}.l2 .layer-inner{transform:rotate(4deg)}
+.l3{left:5%;bottom:3%;width:44%}.l3 .layer-inner{border-radius:50%;transform:rotate(-2deg)}
+.l4{right:0;bottom:0;width:50%}.l4 .layer-inner{transform:rotate(2deg)}
+.l3 .tag{left:50%;transform:translateX(-50%);top:-14px;white-space:nowrap}
+
+/* ---------- Reviews ---------- */
+.rating-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:18px}
+.rating{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-size:15px}
+.stars{display:inline-flex;gap:2px;color:var(--gold)}
+.stars svg{width:16px;height:16px}
+.note{font-size:13px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px}
+.note svg{width:16px;height:16px;color:var(--gold-text);flex:none}
+.reviews{display:grid;gap:16px;margin-top:28px}
+@media(min-width:720px){.reviews{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media(min-width:1040px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.r-card{position:relative;background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .35s ease,box-shadow .35s ease;transform-style:preserve-3d}
+.r-card:hover{box-shadow:var(--shadow-lg)}
+.r-card::before{content:"\201C";position:absolute;right:18px;top:-4px;font:600 84px/1 var(--f-display);color:color-mix(in srgb,var(--gold) 35%,transparent)}
+.r-head{display:flex;gap:14px;align-items:center}
+.r-photo{width:58px;height:58px;flex:none;border-radius:50%;overflow:hidden}
+.r-photo svg,.r-photo img{width:100%;height:100%;object-fit:cover}
+.r-name{font:600 19px/1.2 var(--f-display);color:var(--wine-deep);margin:0}
+.r-sub{font-size:13px;color:var(--ink-soft);margin:2px 0 0}
+.r-card blockquote{margin:14px 0 0;color:var(--ink);font-size:15.5px;line-height:1.6}
+.r-card .stars{margin-top:12px}
+.reviews-cta{margin-top:30px;text-align:center}
+
+/* ---------- Visit & Book ---------- */
+.visit{background:var(--card);border-top:1px solid var(--line)}
+.visit-grid{display:grid;gap:22px}
+@media(min-width:960px){.visit-grid{grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}}
+.panel{background:var(--ivory);border-radius:var(--radius);padding:22px;border:1px solid var(--line)}
+@media(min-width:720px){.panel{padding:30px}}
+.panel h3{margin-bottom:6px}
+.panel > p{color:var(--ink-soft);margin:0 0 18px;font-size:15px}
+.form{display:grid;gap:14px}
+@media(min-width:620px){.form{grid-template-columns:1fr 1fr}.form .full{grid-column:1/-1}}
+.field label{display:block;font-size:14px;font-weight:500;margin:0 0 6px;color:var(--ink)}
+.field label .opt{font-weight:400;color:var(--ink-soft);font-size:12.5px}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:12px 14px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--ink) 16%,transparent);background:var(--card);font-size:16px;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%236B1E2E' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.field textarea{min-height:100px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--wine);box-shadow:0 0 0 4px color-mix(in srgb,var(--wine) 14%,transparent)}
+.field .err{display:none;font-size:13px;color:#A2192F;margin-top:6px}
+.field.invalid input{border-color:#A2192F}
+.field.invalid .err{display:block}
+.form .btn{width:100%}
+.privacy{font-size:12.5px;color:var(--ink-soft);margin:2px 0 0;text-align:center}
+.confirm{display:none;margin-top:20px;border-radius:var(--radius);background:var(--card);border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);box-shadow:var(--shadow-lg);padding:22px;animation:rise .45s ease both}
+.confirm.show{display:block}
+.confirm-head{display:flex;gap:12px;align-items:center}
+.confirm-head .seal{width:46px;height:46px;flex:none;border-radius:50%;background:var(--wine);color:var(--gold);display:grid;place-items:center}
+.confirm-head .seal svg{width:24px;height:24px}
+.confirm h4{margin:0;font:600 23px/1.2 var(--f-display);color:var(--wine-deep)}
+.confirm .explain{margin:12px 0 14px;font-size:15px;color:var(--ink-soft)}
+.bubble{position:relative;white-space:pre-wrap;font-size:14.5px;line-height:1.55;background:color-mix(in srgb,var(--gold) 12%,var(--card));border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);border-radius:16px 16px 16px 4px;padding:14px 16px;color:var(--ink);word-break:break-word}
+.bubble-label{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin:0 0 8px;font-weight:500}
+.confirm-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.confirm-actions .btn{flex:1 1 140px}
+.info-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.info-list li{display:flex;gap:14px}
+.info-list .ico{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--wine) 8%,transparent);color:var(--wine)}
+.info-list .ico svg{width:20px;height:20px}
+.info-list b{display:block;font-weight:500;color:var(--ink);font-size:15px}
+.info-list span{display:block;color:var(--ink-soft);font-size:15px}
+.map{position:relative;margin-top:20px;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;border:1px solid var(--line);background:#F1E9DC}
+.map svg{width:100%;height:100%}
+.map-cap{position:absolute;left:12px;bottom:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.map-cap span{padding:6px 12px;border-radius:999px;background:color-mix(in srgb,var(--card) 92%,transparent);font-size:12.5px;color:var(--ink-soft)}
+.nri{margin-top:22px;border-radius:var(--radius);padding:24px;background:var(--wine-deep);color:#F7EBDD;position:relative;overflow:hidden}
+.nri::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);box-shadow:0 0 0 18px color-mix(in srgb,var(--gold) 8%,transparent),0 0 0 40px color-mix(in srgb,var(--gold) 5%,transparent)}
+.nri .eyebrow{color:var(--gold)}
+.nri h3{color:#fff;font-size:27px;max-width:18ch}
+html[lang="gu"] .nri h3{font-size:22px}
+.nri p{color:#E8D6C6;font-size:15px;margin:10px 0 18px;max-width:42ch;position:relative;z-index:1}
+.nri ul{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px;font-size:14.5px;position:relative;z-index:1}
+.nri li{display:flex;gap:10px;align-items:center}
+.nri li::before{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--gold);flex:none}
+.nri .btn{position:relative;z-index:1}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--wine-deep);color:#E8D6C6;padding:46px 0 110px;font-size:14px}
+.footer .wrap{display:grid;gap:20px}
+.footer .brand-name{color:#fff}
+.footer .brand-name small{color:var(--gold)}
+.footer a{color:#fff}
+.demo-note{border-top:1px solid rgba(255,255,255,.14);padding-top:18px;font-size:12.5px;color:#C9B2A6}
+
+/* ---------- Floating chat ---------- */
+.chat-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:10px 20px 10px 14px;border-radius:999px;border:0;background:var(--wine);color:#fff;font-weight:500;font-size:15px;box-shadow:0 14px 30px -10px rgba(74,18,32,.65),inset 0 0 0 1.5px color-mix(in srgb,var(--gold) 50%,transparent)}
+.chat-fab .dot{width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--wine-deep);display:grid;place-items:center}
+.chat-fab svg{width:18px;height:18px}
+.chat-pop{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:61;width:min(330px,calc(100vw - 32px));background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-lg);border:1px solid var(--line);padding:20px;display:none}
+.chat-pop.open{display:block;animation:drop .22s ease-out}
+.chat-pop h4{margin:0 0 6px;font:600 22px/1.2 var(--f-display);color:var(--wine-deep)}
+.chat-pop p{margin:0 0 14px;font-size:14.5px;color:var(--ink-soft)}
+.chat-pop .x{position:absolute;right:10px;top:10px}
+
+/* ---------- Modal / sheet ---------- */
+.modal{position:fixed;inset:0;z-index:80;display:none;align-items:flex-end;justify-content:center;background:rgba(32,10,16,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.modal.open{display:flex;animation:fade .2s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet{position:relative;width:100%;max-width:520px;max-height:92svh;overflow:auto;background:var(--card);border-radius:24px 24px 0 0;padding:26px 20px calc(22px + env(safe-area-inset-bottom));animation:up .3s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:640px){.modal{align-items:center}.sheet{border-radius:24px;padding:30px}}
+@keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+.modal.full .sheet{max-width:none;height:100%;max-height:none;border-radius:0;padding:0;display:grid;grid-template-rows:auto 1fr}
+@media(min-width:900px){.modal.full .sheet{max-width:1080px;height:auto;max-height:90svh;border-radius:24px;grid-template-rows:1fr;grid-template-columns:1fr 1fr}}
+.icon-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--wine)}
+.icon-btn svg{width:20px;height:20px}
+.sheet > .x{position:absolute;right:14px;top:14px;z-index:3}
+.view-media{position:relative;background:var(--blush);min-height:52svh}
+.view-media svg,.view-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.view-media{min-height:0}}
+.view-body{padding:24px 20px calc(28px + env(safe-area-inset-bottom));overflow:auto}
+@media(min-width:900px){.view-body{padding:48px 44px}}
+.view-body h3{font-size:32px;margin:6px 0 10px}
+.view-body .desc{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.spec{list-style:none;margin:0 0 22px;padding:0;border-top:1px solid var(--line)}
+.spec li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.spec li span:first-child{color:var(--ink-soft)}
+.spec li span:last-child{text-align:right;font-weight:500}
+.view-actions{display:grid;gap:10px}
+.sheet h4{margin:0 0 6px;font:600 26px/1.2 var(--f-display);color:var(--wine-deep);padding-right:44px}
+.sheet .sub{color:var(--ink-soft);font-size:15px;margin:0 0 16px}
+.live-note{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--wine) 6%,transparent);font-size:14px;color:var(--ink)}
+.live-note svg{width:18px;height:18px;flex:none;color:var(--wine);margin-top:2px}
+.enq-date{margin:0 0 14px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);opacity:0;z-index:90;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  #shimmer{display:none}
+  .stack{animation:none}
+}
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#collection">Skip to collection</a>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Home">
+      <span class="monogram" aria-hidden="true" data-bind="monogram">A</span>
+      <span class="brand-name"><span data-bind="name">Aarohi Bridal Studio</span><small data-bind="city">Rajkot</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home" data-i18n="navHome">Home</a>
+      <a href="#collection" data-i18n="navCollection">Collection</a>
+      <a href="#story" data-i18n="navStory">Our Story</a>
+      <a href="#reviews" data-i18n="navReviews">Reviews</a>
+      <a href="#visit" data-i18n="navVisit">Visit &amp; Book</a>
+    </nav>
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+      <span lang="gu">ગુજરાતી</span>
+    </button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      <span data-i18n="menu">Menu</span>
+    </button>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Main mobile">
+      <a href="#home"><b data-i18n="navHome">Home</b><span>I</span></a>
+      <a href="#collection"><b data-i18n="navCollection">Collection</b><span>II</span></a>
+      <a href="#story"><b data-i18n="navStory">Our Story</b><span>III</span></a>
+      <a href="#reviews"><b data-i18n="navReviews">Reviews</b><span>IV</span></a>
+      <a href="#visit"><b data-i18n="navVisit">Visit &amp; Book</b><span>V</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ 1. HOME ============ -->
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <canvas id="shimmer" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n="heroEyebrow">Bridal · Sider · Engagement · Festive</p>
+      <h1 id="heroTitle"><span data-bind="nameMain">Aarohi</span><em data-bind="nameSub">Bridal Studio</em></h1>
+      <p class="tagline gu-aware" data-i18n="tagline">Bridal &amp; festive wear, crafted in Rajkot</p>
+      <p class="tagline-gu" lang="gu" data-bind="taglineGu"></p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#visit" data-action="book" data-i18n="ctaBook">Book a Trial</a>
+        <a class="btn btn-secondary" href="#collection" data-i18n="ctaCollection">View Collection</a>
+      </div>
+      <ul class="hero-facts">
+        <li data-i18n="fact1">Buy or rent</li>
+        <li data-i18n="fact2">Custom fittings</li>
+        <li data-i18n="fact3">Video-call shopping</li>
+      </ul>
+    </div>
+    <div class="stack-zone" id="stackZone" role="group" aria-label="Featured outfits">
+      <div class="stack" id="stack"></div>
+      <p class="stack-hint" aria-hidden="true" data-i18n="stackHint">Scroll or swipe to explore</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="Why brides choose us">
+  <div class="wrap">
+    <ul>
+      <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4l3 6 6 1-4.5 4.5 1 6.5L16 19l-5.5 3 1-6.5L7 11l6-1z"/></svg><span data-i18n="trust1">Handpicked bridal &amp; festive edits</span></li>
+      <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 24L24 6M9 6h15v15"/><circle cx="8" cy="24" r="2"/></svg><span data-i18n="trust2">Made-to-measure &amp; alterations</span></li>
+      <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="8" width="16" height="16" rx="3"/><path d="M21 13l6-3v12l-6-3"/></svg><span data-i18n="trust3">Video-call shopping for NRI brides</span></li>
+      <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h22v14H5zM9 12V8a7 7 0 0114 0v4"/></svg><span data-i18n="trust4">Rent premium outfits for every function</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ 2. COLLECTION ============ -->
+<section class="sec" id="collection" aria-labelledby="colTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="colEyebrow">The Collection</p>
+      <h2 id="colTitle" data-i18n="colTitle">Outfits for every function</h2>
+      <p class="lede gu-aware" data-i18n="colLede">From haldi to the pheras. Tap any outfit to see it up close, then enquire in one tap.</p>
+    </div>
+    <div class="chips" id="chips" role="toolbar" aria-label="Filter by category"></div>
+    <p class="result-count" id="resultCount" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ============ 3. OUR STORY ============ -->
+<section class="sec story" id="story" aria-labelledby="storyTitle">
+  <div class="wrap story-grid">
+    <div class="story-text">
+      <p class="eyebrow" data-i18n="storyEyebrow">Our Story</p>
+      <h2 id="storyTitle" data-i18n="storyTitle">From a sketch to your wedding day</h2>
+      <p style="margin-top:16px"><span class="sample-badge">Sample text · replace for each client</span></p>
+      <div id="storyBody"></div>
+      <ol class="steps">
+        <li><b data-i18n="step1">Sketch</b><span data-i18n="step1d">Your idea on paper</span></li>
+        <li><b data-i18n="step2">Fabric</b><span data-i18n="step2d">Silks, velvets, organza</span></li>
+        <li><b data-i18n="step3">Embroidery</b><span data-i18n="step3d">Zardozi, mirror, gota</span></li>
+        <li><b data-i18n="step4">Finished</b><span data-i18n="step4d">Fitted for your day</span></li>
+      </ol>
+      <div class="made-in">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M17 3c6 4 10 8 10 14a10 10 0 01-20 0c0-6 4-10 10-14z"/><path d="M17 10v18M12 16l5 4 5-4"/></svg>
+        <div>
+          <strong data-i18n="madeIn">Designed and stitched in Rajkot</strong>
+          <p data-i18n="madeInD">Every outfit can be customised: colour, neckline, sleeves, embroidery and fit, so it feels made for you.</p>
+        </div>
+      </div>
+    </div>
+    <div class="scene" id="scene" aria-hidden="true">
+      <div class="layer l1" data-speed="-70"><span class="tag"><i>01</i><span data-i18n="step1">Sketch</span></span><div class="layer-inner" id="artSketch"></div></div>
+      <div class="layer l2" data-speed="-25"><span class="tag"><i>02</i><span data-i18n="step2">Fabric</span></span><div class="layer-inner" id="artFabric"></div></div>
+      <div class="layer l3" data-speed="30"><span class="tag"><i>03</i><span data-i18n="step3">Embroidery</span></span><div class="layer-inner" id="artHoop"></div></div>
+      <div class="layer l4" data-speed="75"><span class="tag"><i>04</i><span data-i18n="step4">Finished</span></span><div class="layer-inner" id="artFinal"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. REVIEWS ============ -->
+<section class="sec" id="reviews" aria-labelledby="revTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="revEyebrow">Reviews</p>
+      <h2 id="revTitle" data-i18n="revTitle">Loved by brides and their families</h2>
+      <div class="rating-row">
+        <span class="rating"><span class="stars" aria-hidden="true" id="headStars"></span><span id="ratingText"></span></span>
+        <span class="note"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 7v4M8 4.6v.4"/></svg><span data-i18n="sampleNote">Sample reviews for this demo. Real Google reviews will appear here.</span></span>
+      </div>
+    </div>
+    <div class="reviews" id="reviewList"></div>
+    <div class="reviews-cta">
+      <a class="btn btn-secondary" id="googleLink" href="#" target="_blank" rel="noopener" data-i18n="ctaGoogle">Read all reviews on Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. VISIT & BOOK ============ -->
+<section class="sec visit" id="visit" aria-labelledby="visitTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="visitEyebrow">Visit &amp; Book</p>
+      <h2 id="visitTitle" data-i18n="visitTitle">Book your trial at the studio</h2>
+      <p class="lede gu-aware" data-i18n="visitLede">Share a few details and we will keep your favourite outfits ready for your visit.</p>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <div class="panel">
+          <h3 data-i18n="formTitle">Trial booking</h3>
+          <p data-i18n="formSub">Takes less than a minute.</p>
+          <form class="form" id="bookForm" novalidate>
+            <div class="field">
+              <label for="fName" data-i18n="fName">Your name</label>
+              <input id="fName" name="name" autocomplete="name" required>
+              <p class="err" data-i18n="errName">Please enter your name.</p>
+            </div>
+            <div class="field">
+              <label for="fPhone" data-i18n="fPhone">Phone / WhatsApp</label>
+              <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91" required>
+              <p class="err" data-i18n="errPhone">Please enter a valid phone number.</p>
+            </div>
+            <div class="field">
+              <label for="fDate" data-i18n="fDate">Function date</label>
+              <input id="fDate" name="date" type="date" required>
+              <p class="err" data-i18n="errDate">Please choose your function date.</p>
+            </div>
+            <div class="field">
+              <label for="fType" data-i18n="fType">Outfit type</label>
+              <select id="fType" name="type" required></select>
+              <p class="err" data-i18n="errType">Please choose an outfit type.</p>
+            </div>
+            <div class="field full">
+              <label for="fBudget" data-i18n="fBudget">Budget range</label>
+              <select id="fBudget" name="budget"></select>
+            </div>
+            <div class="field full">
+              <label for="fMsg"><span data-i18n="fMsg">Message</span> <span class="opt" data-i18n="optional">(optional)</span></label>
+              <textarea id="fMsg" name="message" rows="3" data-i18n-ph="fMsgPh" placeholder="Colours you love, outfit codes, preferred visit time..."></textarea>
+            </div>
+            <div class="full">
+              <button class="btn btn-primary" type="submit" data-i18n="ctaSubmit">Request my trial</button>
+              <p class="privacy" data-i18n="privacy">Your details are only used to arrange your visit.</p>
+            </div>
+          </form>
+          <div class="confirm" id="confirm" role="status" aria-live="polite" tabindex="-1">
+            <div class="confirm-head">
+              <span class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <h4 data-i18n="confirmTitle">Your trial request is ready</h4>
+            </div>
+            <p class="explain" data-i18n="confirmText">In the live website, this booking will open WhatsApp with all your details filled in.</p>
+            <p class="bubble-label" data-i18n="msgPreview">Message preview</p>
+            <div class="bubble" id="confirmMsg"></div>
+            <div class="confirm-actions">
+              <button class="btn btn-primary btn-sm" type="button" id="copyBooking" data-i18n="copy">Copy message</button>
+              <button class="btn btn-secondary btn-sm" type="button" id="editBooking" data-i18n="edit">Edit details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 data-i18n="findUs">Find the studio</h3>
+          <p data-i18n="findUsSub">Walk in during studio hours, or book a trial for a private appointment.</p>
+          <ul class="info-list">
+            <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b data-i18n="address">Address</b><span data-bind="address"></span></div></li>
+            <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><div><b data-i18n="timings">Timings</b><span data-bind="timings"></span><span data-bind="sunday"></span></div></li>
+            <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span><div><b data-i18n="phone">Phone / WhatsApp</b><span data-bind="phone"></span></div></li>
+          </ul>
+          <div class="map" id="map"></div>
+        </div>
+
+        <div class="nri">
+          <p class="eyebrow" data-i18n="nriEyebrow">Outstation &amp; NRI brides</p>
+          <h3 data-i18n="nriTitle">Can't visit Rajkot? Shop with us on a video call.</h3>
+          <p data-i18n="nriText">See outfits live, compare colours in daylight and get measurement help, from anywhere in India or abroad.</p>
+          <ul>
+            <li data-i18n="nri1">Live video walkthrough of the collection</li>
+            <li data-i18n="nri2">Guided measurements and fitting advice</li>
+            <li data-i18n="nri3">Shipping across India and overseas</li>
+          </ul>
+          <button class="btn btn-gold" type="button" id="videoCallBtn" data-i18n="ctaVideo">Book a video call</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <span class="monogram" aria-hidden="true" data-bind="monogram">A</span>
+      <span class="brand-name"><span data-bind="name">Aarohi Bridal Studio</span><small data-bind="city">Rajkot</small></span>
+    </a>
+    <div><span data-bind="address"></span><br><span data-bind="timings"></span> · <span data-bind="sunday"></span></div>
+    <p class="demo-note" data-bind="demoNote"></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" type="button" aria-expanded="false" aria-controls="chatPop">
+  <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19l1.4-3.6A8 8 0 1112 20a8 8 0 01-4-1.1z"/></svg></span>
+  <span data-i18n="chat">Chat with us</span>
+</button>
+<div class="chat-pop" id="chatPop" role="dialog" aria-labelledby="chatPopTitle">
+  <button class="icon-btn x" type="button" id="chatClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <h4 id="chatPopTitle" data-i18n="chatTitle">Chat with us</h4>
+  <p data-i18n="chatText">WhatsApp chat will be connected in the live version of this website. Customers will tap here and start chatting with the boutique instantly.</p>
+  <button class="btn btn-primary btn-sm" type="button" id="chatToBook" data-i18n="ctaBook">Book a Trial</button>
+</div>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="sheet"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =====================================================================
+   1. CLIENT CONFIG  -  edit this block for each new boutique
+   ---------------------------------------------------------------------
+   - business : name, taglines, address, timings, phone, links
+   - colors   : brand colours (whole site updates automatically)
+   - outfits  : the collection. To use a real photo, set  image: "photos/br-07.jpg"
+                (or a full https:// URL). Leave image empty ("") to keep the
+                drawn placeholder artwork.
+   - price    : set to a number (e.g. 25000) or leave null to show [price]
+   - reviews  : replace the sample reviews with real ones before going live
+   - liveMode : set to true once the client's WhatsApp number is filled in.
+                Enquiries and bookings will then open WhatsApp directly.
+   ===================================================================== */
+const CONFIG = {
+  business: {
+    name: "Aarohi Bridal Studio",
+    nameMain: "Aarohi",              // large first line of the hero title
+    nameSub: "Bridal Studio",        // smaller italic second line
+    monogram: "A",
+    city: "Rajkot",
+    tagline: "Bridal & festive wear, crafted in Rajkot",
+    taglineGu: "રાજકોટમાં બનેલા બ્રાઇડલ અને ફેસ્ટિવ પોશાક",
+    address: "[Shop address], Kalawad Road, Rajkot",
+    timings: "10:30 AM – 8:30 PM, Monday to Saturday",
+    sunday: "Sunday by appointment",
+    phoneDisplay: "[Phone number]",
+    whatsappNumber: "",              // digits with country code, e.g. "919876543210"
+    googleRating: "[Rating]",        // e.g. "4.9"
+    googleReviewCount: "[Number]",   // e.g. "180"
+    googleReviewsUrl: "#",           // link to the Google reviews page
+    mapsUrl: "#",                    // Google Maps link for "Get directions"
+    demoBy: "[Your business name]",  // shown in the footer demo note
+  },
+  liveMode: false,
+
+  colors: {
+    wine: "#6B1E2E",       // main colour (buttons, headings accents)
+    wineDeep: "#4A1220",   // darker shade (headings, footer)
+    gold: "#C9A04E",       // decorative gold
+    goldText: "#8A6424",   // gold used for small text (kept darker for contrast)
+    ivory: "#FBF6EE",      // page background
+    card: "#FFFDF9",       // card background
+    ink: "#2A1A1E",        // main text
+    inkSoft: "#5E4B50",    // secondary text
+    blush: "#F3E4DE",      // soft accent background
+  },
+
+  heroOutfits: ["BR-07", "SD-03", "EN-02"],   // 3 outfit codes shown in the 3D stack
+
+  // categories: first one is shown on the card. Add "Rentals" to show it under the Rentals filter.
+  // offer: "rent" | "buy" | "both"
+  // art: placeholder drawing used when image is empty.
+  //   silhouette: lehenga | saree | gown | choli    pattern: jaal | butti | bandhani | mirror | stripes | paisley | sequin
+  outfits: [
+    { code:"BR-07", name:"Maroon Zardozi Bridal Lehenga", categories:["Bridal","Rentals"], offer:"both", rentPrice:null, buyPrice:null, image:"",
+      description:"Velvet lehenga with hand-done zardozi, a scalloped gold border and a soft net dupatta.", fabric:"Velvet, net dupatta", work:"Zardozi, dabka",
+      art:{ silhouette:"lehenga", pattern:"jaal", bg:"#F1E2D6", base:"#7A1F2B", top:"#6A1824", accent:"#C2475C", motif:"#D9B25A", hanger:"#7d6a55" } },
+    { code:"BR-01", name:"Rani Pink Bridal Lehenga", categories:["Bridal"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Raw silk lehenga in rani pink with gold butti work and a contrast orange dupatta.", fabric:"Raw silk", work:"Gota, butti",
+      art:{ silhouette:"lehenga", pattern:"butti", bg:"#1F3B33", base:"#C2185B", top:"#A8144E", accent:"#F08A3C", motif:"#E7C36A", hanger:"#C9A04E" } },
+    { code:"BR-12", name:"Red Panetar Gharchola Saree", categories:["Bridal"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Traditional Gujarati gharchola in red and ivory with a gold zari grid and a rich pallu.", fabric:"Gajji silk", work:"Zari grid, bandhani",
+      art:{ silhouette:"saree", pattern:"jaal", bg:"#F5E9DC", base:"#B3192C", top:"#8F1322", accent:"#F3E6CF", motif:"#D9B25A", hanger:"#7d6a55" } },
+    { code:"SD-03", name:"Mint Sider Lehenga", categories:["Sider","Rentals"], offer:"both", rentPrice:null, buyPrice:null, image:"",
+      description:"Light mint organza lehenga with pastel thread work, made for sangeet and sider evenings.", fabric:"Organza", work:"Thread, sequin",
+      art:{ silhouette:"lehenga", pattern:"paisley", bg:"#5B1A2A", base:"#A8D5C2", top:"#8FC4AE", accent:"#F6D3D8", motif:"#C9A04E", hanger:"#C9A04E" } },
+    { code:"SD-05", name:"Peach Organza Sider Saree", categories:["Sider"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Feather-light peach organza saree with a sequin border and a hand-embroidered blouse.", fabric:"Organza", work:"Sequin border",
+      art:{ silhouette:"saree", pattern:"sequin", bg:"#24453C", base:"#F4B9A0", top:"#E79F84", accent:"#FAD9C8", motif:"#E7C36A", hanger:"#C9A04E" } },
+    { code:"EN-02", name:"Ivory & Gold Indo-Western Gown", categories:["Engagement","Rentals"], offer:"both", rentPrice:null, buyPrice:null, image:"",
+      description:"Ivory gown with a sculpted gold belt and a sheer embroidered cape for the ring ceremony.", fabric:"Georgette, net cape", work:"Cutdana, pearl",
+      art:{ silhouette:"gown", cape:true, pattern:"sequin", bg:"#6B1E2E", base:"#F5ECDD", top:"#EFE3CF", accent:"#F7EEDF", motif:"#C9A04E", hanger:"#C9A04E" } },
+    { code:"EN-04", name:"Lilac Sequin Lehenga", categories:["Engagement"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Lilac lehenga covered in tonal sequins with a silver-gold scalloped dupatta.", fabric:"Georgette", work:"Sequin, mirror",
+      art:{ silhouette:"lehenga", pattern:"sequin", bg:"#F3E4DE", base:"#B39DDB", top:"#9C84CC", accent:"#E8DDF7", motif:"#B08A3E", hanger:"#7d6a55" } },
+    { code:"EN-09", name:"Emerald Velvet Indo-Western", categories:["Engagement"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Emerald velvet gown with an antique gold jacket, for a regal engagement look.", fabric:"Velvet", work:"Antique zari",
+      art:{ silhouette:"gown", cape:true, pattern:"jaal", bg:"#F5ECDD", base:"#1E5B48", top:"#174A3A", accent:"#D9B25A", motif:"#D9B25A", hanger:"#7d6a55" } },
+    { code:"NV-01", name:"Kutchi Mirror-work Chaniya Choli", categories:["Navratri","Rentals"], offer:"both", rentPrice:null, buyPrice:null, image:"",
+      description:"Hand-embroidered Kutchi chaniya choli with mirror work and a flared kali skirt for garba.", fabric:"Cotton silk", work:"Kutchi mirror work",
+      art:{ silhouette:"choli", pattern:"mirror", bg:"#F5ECDD", base:"#1D2F5E", top:"#C2185B", accent:"#F08A3C", motif:"#E7C36A", hanger:"#7d6a55" } },
+    { code:"NV-06", name:"Bandhani Chaniya Choli", categories:["Navratri"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Red and green bandhani chaniya choli with a gota-patti border and a matching odhni.", fabric:"Gajji silk", work:"Bandhani, gota",
+      art:{ silhouette:"choli", pattern:"bandhani", bg:"#2C4A3E", base:"#B3192C", top:"#1E5B48", accent:"#F2C14E", motif:"#F6E7C8", hanger:"#C9A04E" } },
+    { code:"RN-03", name:"Wine Velvet Reception Lehenga", categories:["Rentals","Bridal"], offer:"rent", rentPrice:null, buyPrice:null, image:"",
+      description:"Wine velvet lehenga with antique gold paisleys, available on rent for reception nights.", fabric:"Velvet", work:"Antique zari",
+      art:{ silhouette:"lehenga", pattern:"paisley", bg:"#EFE3D2", base:"#5A1426", top:"#4A1020", accent:"#8C2A40", motif:"#D9B25A", hanger:"#7d6a55" } },
+    { code:"RN-08", name:"Gold Tissue Saree", categories:["Rentals"], offer:"rent", rentPrice:null, buyPrice:null, image:"",
+      description:"Shimmering gold tissue saree with a maroon border, a favourite for the bride's mother.", fabric:"Tissue silk", work:"Zari border",
+      art:{ silhouette:"saree", pattern:"stripes", bg:"#5B1A2A", base:"#D8B76A", top:"#C9A04E", accent:"#E9CF8E", motif:"#7A1F2B", hanger:"#C9A04E" } },
+  ],
+
+  // Shown in the booking form dropdowns
+  outfitTypes: ["Bridal lehenga", "Sider outfit", "Engagement outfit", "Saree / Gharchola", "Navratri chaniya choli", "Indo-western", "Not sure yet"],
+  budgetRanges: ["Under ₹25,000", "₹25,000 – ₹50,000", "₹50,000 – ₹1,00,000", "Above ₹1,00,000", "Looking to rent", "Prefer to discuss"],
+
+  // SAMPLE story text - replace with the real owner's story
+  story: [
+    "I started stitching from a small room in my mother's house in Rajkot, making outfits for cousins and neighbours before their weddings. Every bride who came to me had a picture in her mind, and my joy was turning that picture into something she could wear.",
+    "Today our studio on Kalawad Road works with a small team of karigars who sketch, dye, embroider and fit every piece by hand. Whether you buy, rent or design from scratch, we take time to understand your function, your family and your budget.",
+  ],
+
+  // SAMPLE reviews - not real. Replace with genuine Google reviews before going live.
+  reviews: [
+    { name:"Riya P.", detail:"Bride · Rajkot", photo:"", text:"They kept three lehengas ready for my trial and helped my mother and me decide in one visit. The fitting was perfect on the wedding day." },
+    { name:"Khushi M.", detail:"Bride · Ahmedabad", photo:"", text:"I rented my sider outfit and it looked brand new. The team adjusted the blouse the same evening." },
+    { name:"Nidhi S.", detail:"NRI bride · London", photo:"", text:"Shopped completely on video calls. They showed every outfit in daylight and the parcel reached us well before the wedding." },
+    { name:"Pooja D.", detail:"Engagement · Rajkot", photo:"", text:"Loved that they customised the colour of my engagement gown. Very patient with all our changes." },
+    { name:"Hetal V.", detail:"Bride's mother · Jamnagar", photo:"", text:"Bought my gharchola and rented outfits for the whole family. Warm, honest and always on time." },
+    { name:"Dhruvi K.", detail:"Navratri · Rajkot", photo:"", text:"Their Kutchi chaniya cholis are gorgeous. I got so many compliments at garba." },
+  ],
+};
+
+/* =====================================================================
+   2. TEXT  -  English / Gujarati labels for headings and buttons
+   ===================================================================== */
+const TEXT = {
+  en: {
+    navHome:"Home", navCollection:"Collection", navStory:"Our Story", navReviews:"Reviews", navVisit:"Visit & Book", menu:"Menu",
+    heroEyebrow:"Bridal · Sider · Engagement · Festive", tagline:CONFIG.business.tagline,
+    ctaBook:"Book a Trial", ctaCollection:"View Collection", fact1:"Buy or rent", fact2:"Custom fittings", fact3:"Video-call shopping",
+    stackHint:"Scroll or swipe to explore",
+    trust1:"Handpicked bridal & festive edits", trust2:"Made-to-measure & alterations", trust3:"Video-call shopping for NRI brides", trust4:"Rent premium outfits for every function",
+    colEyebrow:"The Collection", colTitle:"Outfits for every function", colLede:"From haldi to the pheras. Tap any outfit to see it up close, then enquire in one tap.",
+    catAll:"All", catBridal:"Bridal", catSider:"Sider", catEngagement:"Engagement", catNavratri:"Navratri", catRentals:"Rentals",
+    showing:(n)=>`Showing ${n} outfit${n===1?"":"s"}`, enquire:"Enquire about this outfit", rentFrom:"Rent from", buyFrom:"Buy from", or:"or",
+    view:"View details", empty:"No outfits in this category yet.",
+    storyEyebrow:"Our Story", storyTitle:"From a sketch to your wedding day",
+    step1:"Sketch", step1d:"Your idea on paper", step2:"Fabric", step2d:"Silks, velvets, organza", step3:"Embroidery", step3d:"Zardozi, mirror, gota", step4:"Finished", step4d:"Fitted for your day",
+    madeIn:"Designed and stitched in Rajkot", madeInD:"Every outfit can be customised: colour, neckline, sleeves, embroidery and fit, so it feels made for you.",
+    revEyebrow:"Reviews", revTitle:"Loved by brides and their families", onGoogle:"on Google", reviewsWord:"reviews",
+    sampleNote:"Sample reviews for this demo. Real Google reviews will appear here.", ctaGoogle:"Read all reviews on Google",
+    visitEyebrow:"Visit & Book", visitTitle:"Book your trial at the studio", visitLede:"Share a few details and we will keep your favourite outfits ready for your visit.",
+    formTitle:"Trial booking", formSub:"Takes less than a minute.",
+    fName:"Your name", fPhone:"Phone / WhatsApp", fDate:"Function date", fType:"Outfit type", fBudget:"Budget range", fMsg:"Message", optional:"(optional)",
+    fMsgPh:"Colours you love, outfit codes, preferred visit time...", choose:"Choose one",
+    errName:"Please enter your name.", errPhone:"Please enter a valid phone number.", errDate:"Please choose your function date.", errType:"Please choose an outfit type.",
+    ctaSubmit:"Request my trial", privacy:"Your details are only used to arrange your visit.",
+    confirmTitle:"Your trial request is ready", confirmText:"In the live website, this booking will open WhatsApp with all your details filled in.",
+    msgPreview:"Message preview", copy:"Copy message", edit:"Edit details", copied:"Message copied",
+    findUs:"Find the studio", findUsSub:"Walk in during studio hours, or book a trial for a private appointment.",
+    address:"Address", timings:"Timings", phone:"Phone / WhatsApp", directions:"Get directions", mapNote:"Map placeholder",
+    nriEyebrow:"Outstation & NRI brides", nriTitle:"Can't visit Rajkot? Shop with us on a video call.",
+    nriText:"See outfits live, compare colours in daylight and get measurement help, from anywhere in India or abroad.",
+    nri1:"Live video walkthrough of the collection", nri2:"Guided measurements and fitting advice", nri3:"Shipping across India and overseas", ctaVideo:"Book a video call",
+    chat:"Chat with us", chatTitle:"Chat with us", chatText:"WhatsApp chat will be connected in the live version of this website. Customers will tap here and start chatting with the boutique instantly.",
+    enqTitle:"Enquire about", enqDate:"Your function date", enqSub:"This is the message the customer will send:", liveNote:"In the live website, this button opens WhatsApp with this message ready to send.",
+    close:"Close", fabric:"Fabric", work:"Work", category:"Category", available:"Available to", rent:"Rent", buy:"Buy", rentBuy:"Rent or buy",
+    noticeTitle:"Coming in the live version",
+  },
+  gu: {
+    navHome:"હોમ", navCollection:"કલેક્શન", navStory:"અમારી વાત", navReviews:"રિવ્યૂ", navVisit:"મુલાકાત અને બુકિંગ", menu:"મેનુ",
+    heroEyebrow:"બ્રાઇડલ · સાઇડર · સગાઈ · તહેવાર", tagline:CONFIG.business.taglineGu,
+    ctaBook:"ટ્રાયલ બુક કરો", ctaCollection:"કલેક્શન જુઓ", fact1:"ખરીદો અથવા ભાડે લો", fact2:"માપ પ્રમાણે ફિટિંગ", fact3:"વિડિયો કૉલ પર ખરીદી",
+    stackHint:"જોવા માટે સ્ક્રોલ અથવા સ્વાઇપ કરો",
+    trust1:"પસંદગીના બ્રાઇડલ અને ફેસ્ટિવ પોશાક", trust2:"માપ પ્રમાણે સિલાઈ અને ફેરફાર", trust3:"NRI દુલ્હનો માટે વિડિયો કૉલ ખરીદી", trust4:"દરેક પ્રસંગ માટે ભાડે પોશાક",
+    colEyebrow:"અમારું કલેક્શન", colTitle:"દરેક પ્રસંગ માટે પોશાક", colLede:"હલ્દીથી ફેરા સુધી. કોઈ પણ પોશાક પર ટેપ કરીને નજીકથી જુઓ અને તરત પૂછો.",
+    catAll:"બધા", catBridal:"બ્રાઇડલ", catSider:"સાઇડર", catEngagement:"સગાઈ", catNavratri:"નવરાત્રી", catRentals:"ભાડે",
+    showing:(n)=>`${n} પોશાક`, enquire:"આ પોશાક વિશે પૂછો", rentFrom:"ભાડું", buyFrom:"ખરીદી", or:"અથવા",
+    view:"વિગત જુઓ", empty:"આ કેટેગરીમાં હજી પોશાક નથી.",
+    storyEyebrow:"અમારી વાત", storyTitle:"સ્કેચથી તમારા લગ્નના દિવસ સુધી",
+    step1:"સ્કેચ", step1d:"તમારો વિચાર કાગળ પર", step2:"કાપડ", step2d:"સિલ્ક, વેલ્વેટ, ઓર્ગેન્ઝા", step3:"ભરતકામ", step3d:"જરદોશી, આભલા, ગોટા", step4:"તૈયાર પોશાક", step4d:"તમારા દિવસ માટે ફિટ",
+    madeIn:"રાજકોટમાં ડિઝાઇન અને સિલાઈ", madeInD:"દરેક પોશાકમાં રંગ, ગળું, બાંય, ભરતકામ અને ફિટિંગ તમારી પસંદ પ્રમાણે બદલી શકાય છે.",
+    revEyebrow:"રિવ્યૂ", revTitle:"દુલ્હનો અને પરિવારોનો પ્રેમ", onGoogle:"Google પર", reviewsWord:"રિવ્યૂ",
+    sampleNote:"આ ડેમો માટેના નમૂનાના રિવ્યૂ છે. અહીં સાચા Google રિવ્યૂ દેખાશે.", ctaGoogle:"Google પર બધા રિવ્યૂ વાંચો",
+    visitEyebrow:"મુલાકાત અને બુકિંગ", visitTitle:"સ્ટુડિયોમાં તમારી ટ્રાયલ બુક કરો", visitLede:"થોડી વિગતો આપો, અમે તમારા પસંદગીના પોશાક તૈયાર રાખીશું.",
+    formTitle:"ટ્રાયલ બુકિંગ", formSub:"એક મિનિટથી ઓછો સમય લાગશે.",
+    fName:"તમારું નામ", fPhone:"ફોન / WhatsApp", fDate:"પ્રસંગની તારીખ", fType:"પોશાકનો પ્રકાર", fBudget:"બજેટ", fMsg:"સંદેશ", optional:"(વૈકલ્પિક)",
+    fMsgPh:"ગમતા રંગ, પોશાક કોડ, મુલાકાતનો સમય...", choose:"પસંદ કરો",
+    errName:"કૃપા કરીને તમારું નામ લખો.", errPhone:"કૃપા કરીને સાચો ફોન નંબર લખો.", errDate:"કૃપા કરીને પ્રસંગની તારીખ પસંદ કરો.", errType:"કૃપા કરીને પોશાકનો પ્રકાર પસંદ કરો.",
+    ctaSubmit:"ટ્રાયલ માટે વિનંતી કરો", privacy:"તમારી વિગતો માત્ર મુલાકાત ગોઠવવા માટે વપરાશે.",
+    confirmTitle:"તમારી ટ્રાયલ વિનંતી તૈયાર છે", confirmText:"લાઇવ વેબસાઇટમાં આ બુકિંગ તમારી બધી વિગતો સાથે WhatsApp ખોલશે.",
+    msgPreview:"સંદેશનું પ્રિવ્યૂ", copy:"સંદેશ કૉપી કરો", edit:"વિગતો બદલો", copied:"સંદેશ કૉપી થયો",
+    findUs:"સ્ટુડિયો શોધો", findUsSub:"સ્ટુડિયોના સમયમાં આવો, અથવા ખાનગી મુલાકાત માટે ટ્રાયલ બુક કરો.",
+    address:"સરનામું", timings:"સમય", phone:"ફોન / WhatsApp", directions:"રસ્તો જુઓ", mapNote:"નકશાની જગ્યા",
+    nriEyebrow:"બહારગામ અને NRI દુલ્હનો", nriTitle:"રાજકોટ આવી શકતા નથી? વિડિયો કૉલ પર ખરીદી કરો.",
+    nriText:"ભારત કે વિદેશમાં ક્યાંયથી પણ પોશાક લાઇવ જુઓ, દિવસના પ્રકાશમાં રંગ સરખાવો અને માપ માટે મદદ મેળવો.",
+    nri1:"કલેક્શનનું લાઇવ વિડિયો દર્શન", nri2:"માપ અને ફિટિંગ માટે માર્ગદર્શન", nri3:"ભારત અને વિદેશમાં ડિલિવરી", ctaVideo:"વિડિયો કૉલ બુક કરો",
+    chat:"અમારી સાથે વાત કરો", chatTitle:"અમારી સાથે વાત કરો", chatText:"લાઇવ વેબસાઇટમાં અહીં WhatsApp ચેટ જોડાશે. ગ્રાહક ટેપ કરીને તરત બુટિક સાથે વાત કરી શકશે.",
+    enqTitle:"પૂછપરછ", enqDate:"તમારા પ્રસંગની તારીખ", enqSub:"ગ્રાહક આ સંદેશ મોકલશે:", liveNote:"લાઇવ વેબસાઇટમાં આ બટન આ સંદેશ સાથે WhatsApp ખોલશે.",
+    close:"બંધ કરો", fabric:"કાપડ", work:"કામ", category:"કેટેગરી", available:"ઉપલબ્ધ", rent:"ભાડે", buy:"ખરીદી", rentBuy:"ભાડે અથવા ખરીદી",
+    noticeTitle:"લાઇવ વર્ઝનમાં આવશે",
+  },
+};
+
+/* =====================================================================
+   3. SITE CODE  -  no need to edit below for a new client
+   ===================================================================== */
+(function () {
+  "use strict";
+  const B = CONFIG.business;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(hover: hover)").matches;
+  let lang = "en";
+  try { if (localStorage.getItem("lang") === "gu") lang = "gu"; } catch (e) {}
+  const t = (k) => TEXT[lang][k] ?? TEXT.en[k] ?? k;
+  const CATS = ["All", "Bridal", "Sider", "Engagement", "Navratri", "Rentals"];
+  const catLabel = (c) => t("cat" + c);
+  const byCode = (c) => CONFIG.outfits.find((o) => o.code === c);
+
+  /* ---- colours ---- */
+  const C = CONFIG.colors, root = document.documentElement.style;
+  const cssMap = { wine:"--wine", wineDeep:"--wine-deep", gold:"--gold", goldText:"--gold-text", ivory:"--ivory", card:"--card", ink:"--ink", inkSoft:"--ink-soft", blush:"--blush" };
+  Object.keys(cssMap).forEach((k) => C[k] && root.setProperty(cssMap[k], C[k]));
+  $('meta[name="theme-color"]').setAttribute("content", C.wine);
+  document.title = `${B.name} · ${B.tagline}`;
+
+  /* ---- icons ---- */
+  const ICON = {
+    close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>',
+    star:'<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.8l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.7-5 2.7.9-5.6-4-3.9 5.6-.8z"/></svg>',
+  };
+  const stars = (n = 5) => ICON.star.repeat(n);
+
+  /* ================= Placeholder artwork (SVG) ================= */
+  let seq = 0;
+  function patternDef(type, id, m, base) {
+    const P = (w, h, body) => `<pattern id="${id}" width="${w}" height="${h}" patternUnits="userSpaceOnUse"><rect width="${w}" height="${h}" fill="${base}"/>${body}</pattern>`;
+    switch (type) {
+      case "jaal": return P(28, 28, `<path d="M14 0L28 14L14 28L0 14Z" fill="none" stroke="${m}" stroke-opacity=".6"/><circle cx="14" cy="14" r="2.4" fill="${m}"/><circle cx="0" cy="0" r="1.4" fill="${m}"/><circle cx="28" cy="0" r="1.4" fill="${m}"/><circle cx="0" cy="28" r="1.4" fill="${m}"/><circle cx="28" cy="28" r="1.4" fill="${m}"/>`);
+      case "butti": return P(22, 22, `<g fill="${m}"><circle cx="11" cy="7.6" r="1.7"/><circle cx="11" cy="14.4" r="1.7"/><circle cx="7.6" cy="11" r="1.7"/><circle cx="14.4" cy="11" r="1.7"/><circle cx="11" cy="11" r="1.1" opacity=".7"/><circle cx="0" cy="0" r=".9"/><circle cx="22" cy="0" r=".9"/><circle cx="0" cy="22" r=".9"/><circle cx="22" cy="22" r=".9"/></g>`);
+      case "bandhani": return P(16, 16, `<g fill="${m}"><circle cx="3" cy="3" r="1"/><circle cx="5.5" cy="3" r="1"/><circle cx="3" cy="5.5" r="1"/><circle cx="5.5" cy="5.5" r="1"/><circle cx="12" cy="11" r="1.1"/><circle cx="11" cy="13.5" r=".8"/><circle cx="13.6" cy="13.2" r=".8"/></g>`);
+      case "mirror": return P(26, 26, `<circle cx="13" cy="13" r="4.6" fill="#EEE8DE" fill-opacity=".85" stroke="${m}" stroke-width="1.6"/><g fill="${m}"><circle cx="0" cy="0" r="1.6"/><circle cx="26" cy="0" r="1.6"/><circle cx="0" cy="26" r="1.6"/><circle cx="26" cy="26" r="1.6"/></g><path d="M13 3v3M13 20v3M3 13h3M20 13h3" stroke="${m}" stroke-width="1"/>`);
+      case "stripes": return P(20, 20, `<rect x="0" width="4" height="20" fill="${m}" opacity=".55"/><circle cx="12" cy="5" r="1.2" fill="${m}"/><circle cx="12" cy="15" r="1.2" fill="${m}"/>`);
+      case "paisley": return P(30, 30, `<path d="M13 5c6 0 9 6 6 11s-9 6-10 2c-1-3 3-5 5-2" fill="none" stroke="${m}" stroke-width="1.3"/><circle cx="24" cy="24" r="1.4" fill="${m}"/><circle cx="4" cy="24" r=".9" fill="${m}"/>`);
+      default: return P(10, 10, `<circle cx="5" cy="5" r="1.1" fill="${m}" opacity=".85"/><circle cx="0" cy="0" r=".7" fill="${m}" opacity=".6"/><circle cx="10" cy="10" r=".7" fill="${m}" opacity=".6"/>`);
+    }
+  }
+  function backdropDef(id, m) {
+    return `<pattern id="${id}" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M32 6c7 8 7 18 0 26c-7-8-7-18 0-26zM32 58c7-8 7-18 0-26c-7 8-7 18 0 26zM6 32c8-7 18-7 26 0c-8 7-18 7-26 0zM58 32c-8-7-18-7-26 0c8 7 18 7 26 0z" fill="none" stroke="${m}" stroke-opacity=".14"/><circle cx="0" cy="0" r="2" fill="${m}" fill-opacity=".18"/><circle cx="64" cy="0" r="2" fill="${m}" fill-opacity=".18"/><circle cx="0" cy="64" r="2" fill="${m}" fill-opacity=".18"/><circle cx="64" cy="64" r="2" fill="${m}" fill-opacity=".18"/></pattern>`;
+  }
+  const hanger = (c) => `<path d="M150 56v-9a8 8 0 1 1 8-8" fill="none" stroke="${c}" stroke-width="2.6" stroke-linecap="round"/><path d="M108 84L150 56L192 84" fill="none" stroke="${c}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const SHADE = `stroke="#000" stroke-opacity=".13" stroke-width="1.2" fill="none"`;
+  const SHAPES = {
+    lehenga(a, F) {
+      return `
+      <path d="M58 358Q150 384 242 358L186 152Q150 160 114 152Z" fill="${F}"/>
+      <path d="M150 158L150 374M133 156L106 370M167 156L194 370M122 154L80 362M178 154L220 362" ${SHADE}/>
+      <path d="M58 358Q150 384 242 358" stroke="${a.motif}" stroke-width="11" fill="none"/>
+      <path d="M64 342Q150 366 236 342" stroke="${a.motif}" stroke-width="2" fill="none" opacity=".85"/>
+      <path d="M114 150Q150 158 186 150L188 162Q150 170 112 162Z" fill="${a.motif}"/>
+      <path d="M104 100L120 80L118 112Z M196 100L180 80L182 112Z" fill="${a.top}"/>
+      <path d="M120 80Q150 92 180 80L188 98L184 151Q150 158 116 151L112 98Z" fill="${a.top}"/>
+      <path d="M134 83Q150 106 166 83" fill="none" stroke="${a.motif}" stroke-width="2.6"/>
+      <path d="M118 140Q150 148 182 140" fill="none" stroke="${a.motif}" stroke-width="1.6" opacity=".8"/>
+      <path d="M178 82Q216 160 228 300Q230 332 216 354L198 350Q208 300 198 200Q190 128 168 86Z" fill="${a.accent}" fill-opacity=".62"/>
+      <path d="M178 82Q216 160 228 300Q230 332 216 354" fill="none" stroke="${a.motif}" stroke-width="3"/>`;
+    },
+    saree(a, F) {
+      return `
+      <path d="M118 126Q150 134 182 126L208 364Q150 378 92 364Z" fill="${F}"/>
+      <path d="M142 190L134 370M150 190L150 372M158 190L166 370" ${SHADE}/>
+      <path d="M92 364Q150 378 208 364" stroke="${a.motif}" stroke-width="10" fill="none"/>
+      <path d="M124 82Q150 92 176 82L182 98L180 128Q150 134 120 128L118 98Z" fill="${a.top}"/>
+      <path d="M137 84Q150 102 163 84" fill="none" stroke="${a.motif}" stroke-width="2.4"/>
+      <path d="M124 86Q176 130 206 214L200 232Q166 160 116 112Z" fill="${a.accent}"/>
+      <path d="M124 86Q176 130 206 214" fill="none" stroke="${a.motif}" stroke-width="4"/>
+      <path d="M126 84L98 110Q84 224 92 334L114 330Q106 222 122 122Z" fill="${a.accent}" fill-opacity=".9"/>
+      <path d="M98 110Q84 224 92 334L114 330" fill="none" stroke="${a.motif}" stroke-width="4"/>`;
+    },
+    gown(a, F) {
+      const cape = a.cape ? `<path d="M120 80L96 112L80 362L108 366L122 160Z M180 80L204 112L220 362L192 366L178 160Z" fill="${a.accent}" fill-opacity=".5"/><path d="M96 112L80 362M204 112L220 362" stroke="${a.motif}" stroke-width="2.4" fill="none"/>` : "";
+      return `
+      <path d="M114 152Q150 160 186 152L228 364Q150 382 72 364Z" fill="${F}"/>
+      <path d="M150 162L150 376M136 160L116 372M164 160L184 372" ${SHADE}/>
+      <path d="M72 364Q150 382 228 364" stroke="${a.motif}" stroke-width="5" fill="none"/>
+      <path d="M120 80Q150 92 180 80L188 98L184 151Q150 158 116 151L112 98Z" fill="${a.top}"/>
+      <path d="M128 82Q150 110 172 82" fill="none" stroke="${a.motif}" stroke-width="2.2"/>
+      <path d="M113 146Q150 156 187 146L188 162Q150 172 112 162Z" fill="${a.motif}"/>
+      <circle cx="150" cy="157" r="5" fill="${a.base}" stroke="${a.motif}" stroke-width="2"/>${cape}`;
+    },
+    choli(a, F) {
+      return `
+      <path d="M44 350Q150 390 256 350L184 150Q150 158 116 150Z" fill="${F}"/>
+      <path d="M150 156L150 380M130 154L94 372M170 154L206 372M120 152L62 360M180 152L238 360" ${SHADE}/>
+      <path d="M82 254Q150 276 218 254" stroke="${a.motif}" stroke-width="4" fill="none"/>
+      <path d="M44 350Q150 390 256 350" stroke="${a.accent}" stroke-width="12" fill="none"/>
+      <path d="M48 340Q150 378 252 340" stroke="${a.motif}" stroke-width="2.4" fill="none" stroke-dasharray="2 5"/>
+      <path d="M104 100L120 80L118 114Z M196 100L180 80L182 114Z" fill="${a.top}"/>
+      <path d="M120 80Q150 92 180 80L188 98L186 136Q150 146 114 136L112 98Z" fill="${a.top}"/>
+      <g fill="#EEE8DE" stroke="${a.motif}" stroke-width="1.2"><circle cx="132" cy="112" r="4"/><circle cx="150" cy="120" r="4"/><circle cx="168" cy="112" r="4"/><circle cx="141" cy="130" r="3"/><circle cx="159" cy="130" r="3"/></g>
+      <path d="M134 83Q150 102 166 83" fill="none" stroke="${a.motif}" stroke-width="2.4"/>
+      <path d="M114 138Q150 148 186 138L186 152Q150 160 114 152Z" fill="${a.motif}"/>
+      <path d="M122 82Q86 150 70 290Q68 318 82 340L100 336Q94 300 104 200Q110 130 134 86Z" fill="${a.accent}" fill-opacity=".7"/>
+      <path d="M122 82Q86 150 70 290Q68 318 82 340" fill="none" stroke="${a.motif}" stroke-width="3"/>`;
+    },
+  };
+  function outfitArt(o, label) {
+    const a = o.art, id = "g" + (seq++);
+    const shape = (SHAPES[a.silhouette] || SHAPES.lehenga)(a, `url(#${id}p)`);
+    return `<svg viewBox="0 0 300 400" role="img" aria-label="${esc(label)}" preserveAspectRatio="xMidYMid slice">
+      <defs>${patternDef(a.pattern, id + "p", a.motif, a.base)}${backdropDef(id + "b", a.motif)}
+        <radialGradient id="${id}v" cx="50%" cy="42%" r="72%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".2"/></radialGradient></defs>
+      <rect width="300" height="400" fill="${a.bg}"/><rect width="300" height="400" fill="url(#${id}b)"/>
+      <path d="M40 400V150Q40 50 150 36Q260 50 260 150V400" fill="none" stroke="${a.motif}" stroke-opacity=".38" stroke-width="1.6"/>
+      <path d="M50 400V152Q50 62 150 48Q250 62 250 152V400" fill="none" stroke="${a.motif}" stroke-opacity=".2"/>
+      <ellipse cx="150" cy="374" rx="104" ry="10" fill="#000" opacity=".16"/>
+      ${hanger(a.hanger)}${shape}
+      <rect width="300" height="400" fill="url(#${id}v)"/></svg>`;
+  }
+  // Uses the real photo when CONFIG gives one, otherwise the drawn placeholder
+  function media(o, eager) {
+    const alt = `${o.name} (${o.code})`;
+    return o.image ? `<img src="${esc(o.image)}" alt="${esc(alt)}" ${eager ? "" : 'loading="lazy"'} decoding="async">` : outfitArt(o, alt);
+  }
+  const priceText = (o) => {
+    const f = (p) => "₹" + (p == null ? "[price]" : Number(p).toLocaleString("en-IN"));
+    const r = `${t("rentFrom")} ${f(o.rentPrice)}`, b = `${t("buyFrom")} ${f(o.buyPrice)}`;
+    return o.offer === "rent" ? r : o.offer === "buy" ? b : `${r} <span>${t("or")}</span> ${b}`;
+  };
+  const offerText = (o) => (o.offer === "rent" ? t("rent") : o.offer === "buy" ? t("buy") : t("rentBuy"));
+
+  /* ================= Static bindings ================= */
+  function bindStatic() {
+    const vals = { name:B.name, nameMain:B.nameMain, nameSub:B.nameSub, monogram:B.monogram, city:B.city, taglineGu:B.taglineGu,
+      address:B.address, timings:B.timings, sunday:B.sunday, phone:B.phoneDisplay,
+      demoNote:`Demo website prepared by ${B.demoBy}. Outfits, prices, story and reviews are sample content.` };
+    $$("[data-bind]").forEach((el) => { const v = vals[el.dataset.bind]; if (v != null) el.textContent = v; });
+    $("#googleLink").href = B.googleReviewsUrl;
+    $("#headStars").innerHTML = stars();
+  }
+
+  /* ================= Language ================= */
+  function applyLang() {
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach((el) => { const v = t(el.dataset.i18n); if (typeof v === "string") el.textContent = v; });
+    $$("[data-i18n-ph]").forEach((el) => (el.placeholder = t(el.dataset.i18nPh)));
+    $("#langToggle").innerHTML = lang === "en" ? '<span lang="gu">ગુજરાતી</span>' : '<span lang="en">English</span>';
+    $("#langToggle").setAttribute("aria-label", lang === "en" ? "Switch to Gujarati" : "Switch to English");
+    $("#ratingText").textContent = `${B.googleRating} ${t("onGoogle")} · ${B.googleReviewCount} ${t("reviewsWord")}`;
+    $(".tagline-gu").style.display = lang === "gu" ? "none" : "";
+    fillSelects();
+    renderChips(); renderGrid(); renderMap();
+  }
+  $("#langToggle").addEventListener("click", () => {
+    lang = lang === "en" ? "gu" : "en";
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+    applyLang();
+  });
+
+  /* ================= Header & nav ================= */
+  const header = $(".header"), menuBtn = $("#menuBtn"), mobileMenu = $("#mobileMenu");
+  const setMenu = (open) => { mobileMenu.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", open); };
+  menuBtn.addEventListener("click", (e) => { e.stopPropagation(); setMenu(!mobileMenu.classList.contains("open")); });
+  mobileMenu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("click", (e) => { if (!e.target.closest("#mobileMenu")) setMenu(false); });
+
+  const navLinks = $$('.nav a, .mobile-menu a');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  $$("main section[id]").forEach((s) => io.observe(s));
+
+  $$('[data-action="book"]').forEach((b) => b.addEventListener("click", () => setTimeout(() => $("#fName").focus({ preventScroll: true }), reduceMotion ? 0 : 700)));
+
+  /* ================= Hero 3D stack ================= */
+  const stack = $("#stack"), zone = $("#stackZone");
+  const heroItems = CONFIG.heroOutfits.map(byCode).filter(Boolean);
+  // render back-to-front: left, right, centre
+  const order = [0, 2, 1];
+  stack.innerHTML = order.map((i) => {
+    const o = heroItems[i]; if (!o) return "";
+    return `<div class="fan-card" data-pos="${i - 1}">${media(o, true)}<div class="fan-label"><b>${esc(o.name)}</b>${esc(o.code)} · ${esc(o.categories[0])}</div></div>`;
+  }).join("");
+  const fanCards = $$(".fan-card", stack);
+  let fanScroll = 0, fanDrag = 0, fanOpen = false, dragging = false, startX = 0, startY = 0, dragBase = 0;
+  function layoutFan() {
+    const s = clamp(Math.max(fanScroll, fanOpen ? 1 : 0, fanDrag), 0, 1);
+    fanCards.forEach((c) => {
+      const p = +c.dataset.pos;
+      if (p === 0) {
+        c.style.transform = `translate3d(0,${-8 * s}px,${30 + 40 * s}px) rotateX(${4 - 4 * s}deg)`;
+      } else {
+        c.style.transform = `translate3d(${p * (10 + 56 * s)}%,${10 + 14 * s}px,${-30 - 30 * s}px) rotateZ(${p * (4 + 7 * s)}deg) rotateY(${-p * (10 + 16 * s)}deg)`;
+      }
+    });
+  }
+  function onHeroScroll() {
+    const h = $("#home").offsetHeight;
+    fanScroll = 0.3 + clamp(window.scrollY / (h * 0.45), 0, 1) * 0.7;
+  }
+  if (reduceMotion) { fanOpen = true; layoutFan(); }
+  else {
+    zone.addEventListener("pointerdown", (e) => { dragging = true; startX = e.clientX; startY = e.clientY; dragBase = Math.max(fanScroll, fanOpen ? 1 : 0); stack.classList.add("live"); });
+    zone.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      const dx = Math.abs(e.clientX - startX);
+      fanDrag = clamp(dragBase + dx / 140, 0, 1); layoutFan();
+    });
+    const end = (e) => {
+      if (!dragging) return; dragging = false; stack.classList.remove("live");
+      const moved = Math.abs(e.clientX - startX) + Math.abs(e.clientY - startY);
+      if (moved < 8) fanOpen = !fanOpen; else fanOpen = fanDrag > 0.5;
+      fanDrag = 0; layoutFan();
+    };
+    zone.addEventListener("pointerup", end); zone.addEventListener("pointercancel", end); zone.addEventListener("pointerleave", end);
+  }
+
+  /* ================= Shimmer particles ================= */
+  function startShimmer() {
+    if (reduceMotion) return;
+    const cv = $("#shimmer"), ctx = cv.getContext("2d");
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    let w = 0, h = 0, running = false, raf = 0;
+    const N = window.innerWidth < 700 ? 14 : 22;
+    const gold = CONFIG.colors.gold;
+    const parts = [];
+    function size() { const r = cv.getBoundingClientRect(); w = r.width; h = r.height; cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    function make(init) {
+      return { x: Math.random() * w, y: init ? Math.random() * h : h + 10, r: 0.8 + Math.random() * 2, vy: 0.12 + Math.random() * 0.25, sway: Math.random() * Math.PI * 2, petal: Math.random() < 0.3, rot: Math.random() * 6, a: 0.18 + Math.random() * 0.4 };
+    }
+    size(); for (let i = 0; i < N; i++) parts.push(make(true));
+    function tick() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = gold;
+      for (const p of parts) {
+        p.y -= p.vy; p.sway += 0.01; p.rot += 0.004; p.x += Math.sin(p.sway) * 0.25;
+        if (p.y < -10) Object.assign(p, make(false));
+        ctx.globalAlpha = p.a * (0.6 + 0.4 * Math.sin(p.sway * 2));
+        ctx.beginPath();
+        if (p.petal) { ctx.ellipse(p.x, p.y, p.r * 2.2, p.r * 1.1, p.rot, 0, Math.PI * 2); }
+        else { ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); }
+        ctx.fill();
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    new IntersectionObserver(([en]) => {
+      if (en.isIntersecting && !running) { running = true; tick(); }
+      else if (!en.isIntersecting && running) { running = false; cancelAnimationFrame(raf); }
+    }).observe(cv);
+    window.addEventListener("resize", size, { passive: true });
+  }
+
+  /* ================= Tilt (hover + touch) ================= */
+  function attachTilt(el, max) {
+    if (reduceMotion) return;
+    let raf = 0;
+    const apply = (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        el.style.transform = `perspective(900px) rotateX(${(0.5 - y) * max}deg) rotateY(${(x - 0.5) * max}deg) translateZ(0)`;
+        el.style.setProperty("--mx", x * 100 + "%"); el.style.setProperty("--my", y * 100 + "%");
+        el.classList.add("tilting");
+      });
+    };
+    const reset = () => { cancelAnimationFrame(raf); el.style.transform = ""; el.classList.remove("tilting"); };
+    el.addEventListener("pointermove", (e) => { if (e.pointerType === "mouse" || e.buttons) apply(e); });
+    el.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") apply(e); });
+    el.addEventListener("pointerleave", reset);
+    el.addEventListener("pointercancel", reset);
+    el.addEventListener("pointerup", (e) => { if (e.pointerType !== "mouse") setTimeout(reset, 350); });
+  }
+
+  /* ================= Collection ================= */
+  let activeCat = "All";
+  function renderChips() {
+    $("#chips").innerHTML = CATS.map((c) => {
+      const n = c === "All" ? CONFIG.outfits.length : CONFIG.outfits.filter((o) => o.categories.includes(c)).length;
+      return `<button class="chip" type="button" data-cat="${c}" aria-pressed="${c === activeCat}">${esc(catLabel(c))}<span class="n">${n}</span></button>`;
+    }).join("");
+  }
+  function renderGrid() {
+    const list = activeCat === "All" ? CONFIG.outfits : CONFIG.outfits.filter((o) => o.categories.includes(activeCat));
+    $("#resultCount").textContent = t("showing")(list.length);
+    $("#grid").innerHTML = list.length ? list.map((o, i) => `
+      <article class="o-card" data-code="${esc(o.code)}" style="animation-delay:${Math.min(i, 8) * 40}ms">
+        <button class="o-media" type="button" data-open="${esc(o.code)}" aria-label="${esc(t("view"))}: ${esc(o.name)}">${media(o)}<span class="sheen"></span><span class="o-tag">${esc(o.code)}</span></button>
+        <div class="o-body">
+          <p class="o-meta">${esc(catLabel(o.categories[0]))}</p>
+          <h3 class="o-name">${esc(o.name)}</h3>
+          <p class="o-price">${priceText(o)}</p>
+          <button class="btn btn-secondary" type="button" data-enquire="${esc(o.code)}">${esc(t("enquire"))}</button>
+        </div>
+      </article>`).join("") : `<p class="empty">${esc(t("empty"))}</p>`;
+    $$(".o-card").forEach((c) => attachTilt(c, finePointer ? 9 : 6));
+  }
+  $("#chips").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-cat]"); if (!b) return;
+    activeCat = b.dataset.cat; renderChips(); renderGrid();
+  });
+  $("#grid").addEventListener("click", (e) => {
+    const enq = e.target.closest("[data-enquire]");
+    if (enq) return openEnquiry(byCode(enq.dataset.enquire), enq);
+    const card = e.target.closest(".o-card");
+    if (card) openOutfit(byCode(card.dataset.code), e.target.closest("button") || card);
+  });
+
+  /* ================= Modal ================= */
+  const modal = $("#modal"), sheet = $("#sheet");
+  let lastFocus = null;
+  function openModal(html, full, opener) {
+    lastFocus = opener || document.activeElement;
+    sheet.innerHTML = html;
+    modal.classList.toggle("full", !!full);
+    modal.classList.add("open"); modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    const x = $(".x", sheet); x && x.focus();
+  }
+  function closeModal() {
+    modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
+  }
+  modal.addEventListener("click", (e) => { if (e.target === modal || e.target.closest(".x")) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { if (modal.classList.contains("open")) closeModal(); setChat(false); setMenu(false); }
+    if (e.key === "Tab" && modal.classList.contains("open")) {
+      const f = $$("button, a[href], input, select, textarea", sheet).filter((el) => !el.disabled && el.offsetParent !== null);
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+    }
+  });
+  const closeBtn = () => `<button class="icon-btn x" type="button" aria-label="${esc(t("close"))}">${ICON.close}</button>`;
+
+  function openOutfit(o, opener) {
+    if (!o) return;
+    openModal(`${closeBtn()}
+      <div class="view-media">${media(o, true)}</div>
+      <div class="view-body">
+        <p class="o-meta">${esc(o.code)} · ${esc(catLabel(o.categories[0]))}</p>
+        <h3 id="modalTitle">${esc(o.name)}</h3>
+        <p class="desc">${esc(o.description)}</p>
+        <ul class="spec">
+          <li><span>${esc(t("category"))}</span><span>${o.categories.map((c) => esc(catLabel(c))).join(", ")}</span></li>
+          <li><span>${esc(t("fabric"))}</span><span>${esc(o.fabric)}</span></li>
+          <li><span>${esc(t("work"))}</span><span>${esc(o.work)}</span></li>
+          <li><span>${esc(t("available"))}</span><span>${esc(offerText(o))}</span></li>
+          <li><span>₹</span><span>${priceText(o)}</span></li>
+        </ul>
+        <div class="view-actions">
+          <button class="btn btn-primary" type="button" data-enq-modal>${esc(t("enquire"))}</button>
+          <button class="btn btn-secondary" type="button" data-book-modal>${esc(t("ctaBook"))}</button>
+        </div>
+      </div>`, true, opener);
+    $("[data-enq-modal]", sheet).addEventListener("click", () => openEnquiry(o, opener));
+    $("[data-book-modal]", sheet).addEventListener("click", () => { closeModal(); prefillType(o); goBook(); });
+  }
+
+  const fmtDate = (v) => {
+    if (!v) return "[date]";
+    const d = new Date(v + "T00:00:00");
+    return isNaN(d) ? v : d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+  };
+  const enquiryMsg = (o, date) => `Hi ${B.name}, I'm interested in outfit ${o.code} (${o.name}). Is it available on ${fmtDate(date)}?`;
+  const waLink = (msg) => `https://wa.me/${B.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+  const canGoLive = () => CONFIG.liveMode && /^\d{8,15}$/.test(B.whatsappNumber);
+
+  function openEnquiry(o, opener) {
+    if (!o) return;
+    openModal(`${closeBtn()}
+      <h4 id="modalTitle">${esc(t("enqTitle"))} ${esc(o.code)}</h4>
+      <p class="sub">${esc(o.name)}</p>
+      <div class="field enq-date"><label for="enqDate">${esc(t("enqDate"))} <span class="opt">${esc(t("optional"))}</span></label><input id="enqDate" type="date" min="${today()}"></div>
+      <p class="bubble-label">${esc(t("enqSub"))}</p>
+      <div class="bubble" id="enqMsg"></div>
+      <p class="live-note">${ICON.info}<span>${esc(t("liveNote"))}</span></p>
+      <div class="confirm-actions">
+        <button class="btn btn-primary btn-sm" type="button" id="enqSend">${esc(canGoLive() ? "WhatsApp" : t("copy"))}</button>
+        <button class="btn btn-secondary btn-sm" type="button" id="enqBook">${esc(t("ctaBook"))}</button>
+      </div>`, false, opener);
+    const msgEl = $("#enqMsg"), dateEl = $("#enqDate");
+    const upd = () => (msgEl.textContent = enquiryMsg(o, dateEl.value));
+    upd(); dateEl.addEventListener("input", upd);
+    $("#enqSend").addEventListener("click", () => canGoLive() ? window.open(waLink(msgEl.textContent), "_blank", "noopener") : copy(msgEl.textContent));
+    $("#enqBook").addEventListener("click", () => { closeModal(); prefillType(o); if (dateEl.value) $("#fDate").value = dateEl.value; goBook(); });
+  }
+  function notice(text) {
+    openModal(`${closeBtn()}<h4 id="modalTitle">${esc(t("noticeTitle"))}</h4><p class="sub">${esc(text)}</p><button class="btn btn-primary btn-sm" type="button" data-ok>OK</button>`);
+    $("[data-ok]", sheet).addEventListener("click", closeModal);
+  }
+  function goBook() {
+    $("#visit").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    setTimeout(() => $("#fName").focus({ preventScroll: true }), reduceMotion ? 0 : 700);
+  }
+
+  /* ================= Story layers ================= */
+  function renderStory() {
+    $("#storyBody").innerHTML = CONFIG.story.map((p, i) => `<p class="${i === 0 ? "first" : ""}">${esc(p)}</p>`).join("");
+    const ink = "#6d6259", wine = CONFIG.colors.wine, gold = CONFIG.colors.gold;
+    $("#artSketch").innerHTML = `<svg viewBox="0 0 300 380" role="img" aria-label="Pencil sketch of a lehenga">
+      <defs><pattern id="sk" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#d9cfc2" stroke-width=".6"/></pattern></defs>
+      <rect width="300" height="380" fill="#FBF8F1"/><rect width="300" height="380" fill="url(#sk)" opacity=".7"/>
+      <g fill="none" stroke="${ink}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M150 30v330" stroke-dasharray="4 6" stroke-width="1" opacity=".6"/>
+        <path d="M122 70Q150 82 178 70L186 88L182 138Q150 145 118 138L114 88Z"/>
+        <path d="M134 73Q150 94 166 73"/>
+        <path d="M118 140Q150 148 182 140L240 340Q150 364 60 340Z"/>
+        <path d="M150 148L150 356M132 146L104 350M168 146L196 350" opacity=".55"/>
+        <path d="M66 326Q150 350 234 326" stroke-width="1"/>
+        <path d="M178 72Q214 150 224 290" stroke-dasharray="3 4"/>
+      </g>
+      <g fill="${ink}" font-family="Jost,sans-serif" font-size="11" opacity=".85"><text x="196" y="112">blouse 14"</text><text x="20" y="230">kali flare</text><text x="196" y="300">zardozi hem</text></g>
+      <path d="M190 108l-10 2M60 226l26 6M194 296l-16 10" stroke="${ink}" stroke-width="1"/></svg>`;
+    $("#artFabric").innerHTML = `<svg viewBox="0 0 300 300" role="img" aria-label="Silk fabric swatch">
+      <defs>${patternDef("jaal", "fb", gold, wine)}<linearGradient id="fold" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".45" stop-color="#fff" stop-opacity=".16"/><stop offset=".55" stop-color="#000" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient></defs>
+      <rect width="300" height="300" fill="url(#fb)"/><rect width="300" height="300" fill="url(#fold)"/>
+      <rect x="0" y="252" width="300" height="48" fill="${gold}"/><path d="M0 258H300M0 294H300" stroke="${wine}" stroke-width="2"/>
+      <path d="M0 276h300" stroke="${wine}" stroke-width="6" stroke-dasharray="6 6"/></svg>`;
+    let petals = ""; for (let i = 0; i < 8; i++) petals += `<path d="M150 150Q160 110 150 82Q140 110 150 150Z" transform="rotate(${i * 45} 150 150)"/>`;
+    let dots = ""; for (let i = 0; i < 16; i++) { const an = (i / 16) * Math.PI * 2; dots += `<circle cx="${150 + Math.cos(an) * 84}" cy="${150 + Math.sin(an) * 84}" r="3"/>`; }
+    $("#artHoop").innerHTML = `<svg viewBox="0 0 300 300" role="img" aria-label="Gold embroidery in a hoop">
+      <circle cx="150" cy="150" r="146" fill="#C9A26B"/><circle cx="150" cy="150" r="134" fill="#B58A52"/>
+      <circle cx="150" cy="150" r="128" fill="${wine}"/>
+      <g fill="${gold}" stroke="#F1D79A" stroke-width=".8">${petals}</g>
+      <circle cx="150" cy="150" r="14" fill="#F1D79A"/><circle cx="150" cy="150" r="7" fill="${wine}"/>
+      <g fill="${gold}">${dots}</g>
+      <circle cx="150" cy="150" r="100" fill="none" stroke="${gold}" stroke-width="1.5" stroke-dasharray="2 5"/>
+      <path d="M210 40L250 6" stroke="#ddd" stroke-width="2.5" stroke-linecap="round"/><path d="M212 40Q190 80 205 104" stroke="${gold}" stroke-width="1.4" fill="none"/></svg>`;
+    const fin = byCode(CONFIG.heroOutfits[0]) || CONFIG.outfits[0];
+    $("#artFinal").innerHTML = media(fin);
+  }
+  const layers = $$(".layer");
+  function onStoryScroll() {
+    const r = $("#scene").getBoundingClientRect(), vh = window.innerHeight;
+    if (r.bottom < -100 || r.top > vh + 100) return;
+    const p = clamp((vh - r.top) / (vh + r.height), 0, 1) - 0.5;
+    layers.forEach((l) => (l.style.transform = `translate3d(0,${(p * +l.dataset.speed).toFixed(1)}px,0)`));
+  }
+
+  /* ================= Reviews ================= */
+  function reviewPhoto(r, i) {
+    if (r.photo) return `<img src="${esc(r.photo)}" alt="Photo of ${esc(r.name)}" loading="lazy">`;
+    const hues = [["#6B1E2E", "#C9A04E"], ["#1E5B48", "#E7C36A"], ["#C2185B", "#F6D3D8"], ["#4A1220", "#D9B25A"], ["#8C2A40", "#F3E4DE"], ["#24453C", "#F4B9A0"]][i % 6];
+    const init = r.name.trim().charAt(0).toUpperCase();
+    return `<svg viewBox="0 0 60 60" role="img" aria-label="Bride photo placeholder for ${esc(r.name)}"><rect width="60" height="60" fill="${hues[0]}"/>
+      <circle cx="30" cy="30" r="24" fill="none" stroke="${hues[1]}" stroke-width="1" stroke-dasharray="1.5 3"/>
+      <text x="30" y="38" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="24" font-weight="600" fill="${hues[1]}">${esc(init)}</text></svg>`;
+  }
+  function renderReviews() {
+    $("#reviewList").innerHTML = CONFIG.reviews.map((r, i) => `
+      <article class="r-card">
+        <div class="r-head"><div class="r-photo">${reviewPhoto(r, i)}</div><div><p class="r-name">${esc(r.name)}</p><p class="r-sub">${esc(r.detail)}</p></div></div>
+        <div class="stars" role="img" aria-label="5 out of 5 stars">${stars()}</div>
+        <blockquote>${esc(r.text)}</blockquote>
+      </article>`).join("");
+    $$(".r-card").forEach((c) => attachTilt(c, 6));
+  }
+
+  /* ================= Map placeholder ================= */
+  function renderMap() {
+    const w = CONFIG.colors.wine;
+    $("#map").innerHTML = `<svg viewBox="0 0 400 250" role="img" aria-label="Map placeholder showing the studio on Kalawad Road" preserveAspectRatio="xMidYMid slice">
+      <rect width="400" height="250" fill="#F1E9DC"/>
+      <g fill="#E7DCCB"><rect x="20" y="20" width="90" height="60" rx="6"/><rect x="130" y="16" width="70" height="70" rx="6"/><rect x="240" y="24" width="120" height="50" rx="6"/><rect x="24" y="150" width="80" height="80" rx="6"/><rect x="250" y="150" width="70" height="40" rx="6"/><rect x="330" y="140" width="60" height="90" rx="6"/></g>
+      <path d="M0 210 C 90 200 120 230 200 222 S 330 200 400 214" stroke="#CFE0DA" stroke-width="16" fill="none"/>
+      <path d="M-10 118 L410 100" stroke="#fff" stroke-width="18"/><path d="M-10 118 L410 100" stroke="#E5D7BE" stroke-width="1.5" stroke-dasharray="10 8"/>
+      <path d="M220 -10 L196 260" stroke="#fff" stroke-width="12"/><path d="M118 -10 L126 260" stroke="#fff" stroke-width="7"/><path d="M330 -10 L340 260" stroke="#fff" stroke-width="7"/>
+      <text x="40" y="104" font-family="Jost,sans-serif" font-size="11" fill="#8a7a6a" transform="rotate(-2.4 40 104)">KALAWAD ROAD</text>
+      <circle cx="258" cy="106" r="22" fill="${w}" opacity=".12"/>
+      <path d="M258 108c-9-9-14-15-14-22a14 14 0 0128 0c0 7-5 13-14 22z" fill="${w}"/><circle cx="258" cy="86" r="5" fill="#fff"/></svg>
+      <div class="map-cap"><span>${esc(t("mapNote"))}</span><button class="btn btn-primary btn-sm" type="button" id="dirBtn">${esc(t("directions"))}</button></div>`;
+    $("#dirBtn").addEventListener("click", () => B.mapsUrl && B.mapsUrl !== "#" ? window.open(B.mapsUrl, "_blank", "noopener") : notice("The \"Get directions\" button will open Google Maps with the studio location in the live version."));
+  }
+
+  /* ================= Booking form ================= */
+  const today = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); };
+  function fillSelects() {
+    const keep = (sel) => sel.value;
+    const typeSel = $("#fType"), budSel = $("#fBudget");
+    const tv = keep(typeSel), bv = keep(budSel);
+    typeSel.innerHTML = `<option value="">${esc(t("choose"))}</option>` + CONFIG.outfitTypes.map((x) => `<option>${esc(x)}</option>`).join("");
+    budSel.innerHTML = `<option value="">${esc(t("choose"))}</option>` + CONFIG.budgetRanges.map((x) => `<option>${esc(x)}</option>`).join("");
+    typeSel.value = tv; budSel.value = bv;
+  }
+  function prefillType(o) {
+    const map = { lehenga: 0, choli: 4, saree: 3, gown: 5 };
+    let idx = map[o.art.silhouette];
+    if (o.categories[0] === "Sider") idx = 1; else if (o.categories[0] === "Engagement" && o.art.silhouette !== "gown") idx = 2;
+    if (CONFIG.outfitTypes[idx]) $("#fType").value = CONFIG.outfitTypes[idx];
+    const m = $("#fMsg"); if (!m.value.includes(o.code)) m.value = (m.value ? m.value + "\n" : "") + `Interested in ${o.code} (${o.name}).`;
+  }
+  const form = $("#bookForm"), confirmBox = $("#confirm");
+  $("#fDate").min = today();
+  function validate() {
+    let ok = true, first = null;
+    const check = (id, cond) => { const f = $(id).closest(".field"); f.classList.toggle("invalid", !cond); if (!cond) { ok = false; first = first || $(id); } };
+    check("#fName", $("#fName").value.trim().length > 1);
+    check("#fPhone", $("#fPhone").value.replace(/\D/g, "").length >= 8);
+    check("#fDate", !!$("#fDate").value);
+    check("#fType", !!$("#fType").value);
+    if (first) first.focus();
+    return ok;
+  }
+  $$("#bookForm input, #bookForm select").forEach((el) => el.addEventListener("input", () => el.closest(".field").classList.remove("invalid")));
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    const v = (id) => $(id).value.trim();
+    const lines = [
+      `Hello ${B.name},`, `I would like to book a trial.`, ``,
+      `Name: ${v("#fName")}`, `Phone: ${v("#fPhone")}`, `Function date: ${fmtDate(v("#fDate"))}`, `Outfit type: ${v("#fType")}`,
+      v("#fBudget") ? `Budget: ${v("#fBudget")}` : null, v("#fMsg") ? `Message: ${v("#fMsg")}` : null,
+    ].filter((x) => x !== null);
+    const msg = lines.join("\n");
+    if (canGoLive()) { window.open(waLink(msg), "_blank", "noopener"); return; }
+    $("#confirmMsg").textContent = msg;
+    form.style.display = "none";
+    confirmBox.classList.add("show");
+    confirmBox.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    confirmBox.focus({ preventScroll: true });
+  });
+  $("#editBooking").addEventListener("click", () => { confirmBox.classList.remove("show"); form.style.display = ""; $("#fName").focus(); });
+  $("#copyBooking").addEventListener("click", () => copy($("#confirmMsg").textContent));
+
+  /* ================= Chat & misc ================= */
+  const fab = $("#chatFab"), pop = $("#chatPop");
+  const setChat = (open) => { pop.classList.toggle("open", open); fab.setAttribute("aria-expanded", open); if (open) $("#chatClose").focus(); };
+  fab.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (canGoLive()) return window.open(waLink(`Hi ${B.name}, I have a question.`), "_blank", "noopener");
+    setChat(!pop.classList.contains("open"));
+  });
+  $("#chatClose").addEventListener("click", () => { setChat(false); fab.focus(); });
+  $("#chatToBook").addEventListener("click", () => { setChat(false); goBook(); });
+  document.addEventListener("click", (e) => { if (!e.target.closest("#chatPop") && !e.target.closest("#chatFab")) setChat(false); });
+  $("#videoCallBtn").addEventListener("click", (e) => {
+    const msg = `Hi ${B.name}, I would like to book a video call to see your collection. I'm based in [city / country].`;
+    if (canGoLive()) return window.open(waLink(msg), "_blank", "noopener");
+    openModal(`${closeBtn()}<h4 id="modalTitle">${esc(t("ctaVideo"))}</h4><p class="bubble-label">${esc(t("enqSub"))}</p><div class="bubble">${esc(msg)}</div><p class="live-note">${ICON.info}<span>${esc(t("liveNote"))}</span></p>`, false, e.currentTarget);
+  });
+  $("#googleLink").addEventListener("click", (e) => { if (B.googleReviewsUrl === "#") { e.preventDefault(); notice("This button will open the boutique's Google reviews page in the live version."); } });
+
+  let toastT = 0;
+  function toast(msg) { const el = $("#toast"); el.textContent = msg; el.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("show"), 1800); }
+  function copy(text) {
+    const done = () => toast(t("copied"));
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+    function fallback() { const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) {} ta.remove(); }
+  }
+
+  /* ================= Scroll loop ================= */
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+      if (!reduceMotion) { onHeroScroll(); if (!dragging) layoutFan(); onStoryScroll(); }
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+
+  /* ================= Init ================= */
+  bindStatic();
+  renderStory();
+  renderReviews();
+  applyLang();
+  onScroll();
+  if (!reduceMotion) { requestAnimationFrame(() => { onHeroScroll(); layoutFan(); }); startShimmer(); }
+})();
+</script>
+</body>
+</html>
