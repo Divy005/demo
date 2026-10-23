@@ -1,29 +1,28 @@
 # Aarohi Bridal Studio – demo website
 
-A one-page demo website for a bridal boutique in Rajkot. Everything (HTML, CSS, JS and the placeholder artwork) lives in `index.html`; there is no build step.
+A demo introduction website for a bridal boutique in Rajkot. It's built on
+[On-Scroll 3D Carousel by Codrops](https://github.com/codrops/3DCarousel) (MIT, see
+`LICENSE-codrops-3dcarousel.txt`): each style rolls past as a 3D carousel while you scroll,
+and tapping its title opens a full-screen grid of the outfits.
+
+No build step: plain HTML, CSS and JavaScript modules. Serve the folder with any static
+server (`python3 -m http.server`); modules don't load from `file://`. Vercel serves it as is.
 
 ## Re-using it for a new client
 
-Open `index.html` and find the `CONFIG` object at the top of the `<script>` block (search for `1. CLIENT CONFIG`).
+Everything client-specific is in **`js/config.js`**:
 
-| What to change | Where in `CONFIG` |
+| What | Where |
 | --- | --- |
-| Boutique name, monogram, city | `business.name`, `business.nameMain`, `business.nameSub`, `business.monogram`, `business.city` |
-| English / Gujarati taglines | `business.tagline`, `business.taglineGu` |
-| Address, timings, phone | `business.address`, `business.timings`, `business.sunday`, `business.phoneDisplay` |
-| WhatsApp | `business.whatsappNumber` (e.g. `919876543210`), then set `liveMode: true` |
-| Google rating and links | `business.googleRating`, `business.googleReviewCount`, `business.googleReviewsUrl`, `business.mapsUrl` |
-| Brand colours | `colors` (main wine, gold, background, text) |
-| Outfits | `outfits` – code, name, categories, rent/buy prices, description, `image` |
-| Real photos | set `image: "photos/br-07.jpg"` on an outfit and add the file to the repo |
-| 3 outfits in the hero stack | `heroOutfits` |
+| Name, taglines, address, timings, phone | `business` |
+| WhatsApp | `business.whatsappNumber` (e.g. `919876543210`), then `liveMode: true` |
+| Google rating and links | `business.googleRating`, `googleReviewCount`, `googleReviewsUrl`, `mapsUrl` |
+| Colours | `colors` (background, text, muted text, accent) |
+| Carousels and their titles | `styles` (one carousel per style, in order) |
+| Outfits and photos | `outfits` – each outfit's `photos` list; it appears in the carousel of its first category |
 | Form dropdowns | `outfitTypes`, `budgetRanges` |
-| Owner story | `story` (sample text) |
-| Reviews | `reviews` (sample, not real; add `photo` for a bride photo) |
-| Your agency name in footer | `business.demoBy` |
+| Story and reviews (sample) | `story`, `reviews` |
+| Gujarati labels | `TEXT.gu` |
 
-Gujarati translations of headings and buttons are in the `TEXT.gu` object just below `CONFIG`.
-
-## Deploy
-
-It's a static site, so Vercel serves `index.html` from the repo root with no extra settings.
+Photos go in `photos/`, ideally 2:3 portrait, around 800 × 1200 px, as WebP.
+A style only shows up once at least one of its outfits has photos.
