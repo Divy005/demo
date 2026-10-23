@@ -470,6 +470,8 @@
     fillDetail(tile.o, tile.src);
     detail.hidden = false;
     gsap.set(detail, { autoAlpha: 1 });
+    // On phones the detail has a paper background; fade it in over the gallery
+    if (isSmall()) gsap.fromTo(detail, { backgroundColor: 'rgba(233, 223, 204, 0)' }, { backgroundColor: 'rgba(233, 223, 204, 1)', duration: D(0.6) });
     const parts = ['.detail__code', '.detail__desc', '.detail__facts', '.detail__actions', '.detail__thumbs', '#detailClose'];
     gsap.set(parts, { autoAlpha: 0 });
     gsap.set(detailImg, { autoAlpha: 0 });
@@ -513,6 +515,7 @@
     const finish = () => {
       detail.hidden = true;
       gsap.set(parts, { clearProps: 'all' });
+      gsap.set(detail, { clearProps: 'backgroundColor' });
       nameSplit?.revert();
       nameSplit = null;
       hiddenTile = -1;
@@ -534,6 +537,7 @@
     const to = el.getBoundingClientRect();
     hiddenTile = currentTile;
 
+    if (isSmall()) gsap.to(detail, { backgroundColor: 'rgba(233, 223, 204, 0)', duration: D(0.5) });
     gsap.timeline({ onComplete: finish })
       .to(parts, { autoAlpha: 0, duration: D(0.35) }, 0)
       .to(fly, { left: to.left, top: to.top, width: to.width, height: to.height, rotationY: to.left + to.width / 2 < W / 2 ? 20 : -20, transformPerspective: 1200, duration: D(0.95), ease: 'power3.inOut' }, D(0.1))

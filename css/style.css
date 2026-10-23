@@ -4,7 +4,7 @@
   --paper: #e9dfcc;
   --paper-light: #f2eadc;
   --ink: #3a2e24;
-  --ink-soft: #756554;
+  --ink-soft: #6a5947;
   --ink-faint: rgba(58, 46, 36, 0.38);
   --line: rgba(58, 46, 36, 0.24);
   --olive: #2f382a;
@@ -75,7 +75,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0 0 auto;
   height: calc(100% + 36px);
-  background: linear-gradient(var(--paper) 35%, rgba(233, 223, 204, 0));
+  background: linear-gradient(var(--paper) calc(100% - 36px), rgba(233, 223, 204, 0)); /* Solid behind the menu, then a short fade */
   z-index: -1;
   pointer-events: none;
 }
@@ -288,7 +288,7 @@ html[lang='gu'] #langToggle { font-family: var(--font); letter-spacing: 0.06em; 
 /* The photo flying between the gallery and the detail view */
 .fly {
   position: fixed;
-  z-index: 30;
+  z-index: 50; /* Above the detail page, which has its own background on phones */
   object-fit: cover;
   object-position: 50% 20%;
   pointer-events: none;
@@ -297,15 +297,33 @@ html[lang='gu'] #langToggle { font-family: var(--font); letter-spacing: 0.06em; 
 }
 
 @media (max-width: 900px) {
+  /* On phones the detail is its own page: it covers the menu and the drawings, so the text sits on plain paper */
   .detail {
+    z-index: 45;
     grid-template-columns: 1fr;
     align-content: start;
     gap: 22px;
-    padding: 120px var(--gutter) 60px;
+    padding: calc(var(--top) + 52px) var(--gutter) max(48px, env(safe-area-inset-bottom, 0px));
+    background: var(--paper);
   }
-  .detail__img { height: min(58vh, 560px); }
-  .detail__text { max-width: none; }
-  .close { top: calc(var(--top) + 64px); }
+  .close {
+    position: fixed;
+    top: calc(var(--top) - 8px);
+    right: max(12px, env(safe-area-inset-right, 0px));
+    padding: 10px 16px 8px;
+    border-radius: 999px;
+    background: var(--paper-light);
+    box-shadow: 0 6px 18px -8px rgba(58, 38, 20, 0.45);
+    font-size: 13px;
+  }
+  .detail__code { color: var(--ink-soft); font-weight: 400; }
+  .detail__img { height: min(54vh, 520px); }
+  .detail__text { max-width: none; gap: 20px; }
+  .detail__desc { font-size: 16px; font-weight: 400; line-height: 1.7; }
+  .detail__facts div { flex-direction: column; gap: 2px; font-size: 15.5px; font-weight: 400; }
+  .detail__facts dt { font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .detail__facts dd { text-align: left; }
+  .detail__actions .btn { flex: 1 1 100%; font-weight: 400; }
 }
 
 /* ---------- Panels (story, reviews, visit) ---------- */
@@ -371,6 +389,17 @@ html[lang='gu'] #langToggle { font-family: var(--font); letter-spacing: 0.06em; 
 .nri__title { font-size: 22px; font-weight: 300; line-height: 1.35; }
 
 .note { margin: 64px 0 0; font-size: 13px; color: var(--ink-soft); }
+
+@media (max-width: 900px) {
+  .panel { background: var(--paper); padding-top: calc(var(--top) + 96px); }
+  .story__text p,
+  .review blockquote,
+  .facts dd,
+  .nri p,
+  .ready p { font-weight: 400; }
+  .review blockquote { font-size: 19px; }
+  .story__made { font-weight: 300; }
+}
 
 /* ---------- Buttons and form ---------- */
 .btn {
