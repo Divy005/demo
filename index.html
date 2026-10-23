@@ -147,7 +147,17 @@ html[lang="gu"] h2{font-size:clamp(28px,6vw,44px)}
 .rc .shade{position:absolute;inset:0;border-radius:14px;background:#12040A;opacity:0;pointer-events:none}
 .floor{position:absolute;left:50%;top:76%;width:min(560px,120vw);height:120px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(241,217,154,.22),rgba(241,217,154,.06) 55%,transparent);pointer-events:none}
 .floor::after{content:"";position:absolute;inset:30% 12%;border-radius:50%;border:1px solid rgba(241,217,154,.25)}
-.ring-caption{position:relative;z-index:3;text-align:center;margin-top:-34px;min-height:76px}
+.ring-caption{position:relative;z-index:3;text-align:center;margin-top:-40px;min-height:104px}
+.round{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;perspective:400px}
+.rl-k{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(241,217,154,.7)}
+html[lang="gu"] .rl-k{letter-spacing:.02em;text-transform:none;font-size:13px}
+.rl-v{display:inline-block;font:italic 600 26px/1 var(--f-display);color:var(--gold-light);transform-origin:50% 100%}
+html[lang="gu"] .rl-v{font-family:var(--f-gu);font-style:normal;font-size:20px}
+.rl-v.swap{animation:styleIn .9s var(--ease)}
+@keyframes styleIn{from{opacity:0;transform:rotateX(-90deg) translateY(6px)}to{opacity:1;transform:none}}
+.round-dots{display:inline-flex;gap:5px}
+.round-dots i{width:6px;height:6px;border-radius:50%;background:rgba(241,217,154,.3);transition:all .4s}
+.round-dots i.on{width:18px;border-radius:3px;background:var(--gold)}
 .ring-caption .code{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .ring-caption .nm{font:600 24px/1.2 var(--f-display);color:#fff;margin:2px 0 8px;transition:opacity .3s}
 .ring-caption button{background:none;border:0;color:var(--gold-light);font-size:14px;text-decoration:underline;text-underline-offset:4px;padding:6px 10px}
@@ -456,6 +466,7 @@ html[lang="gu"] .turn-hint{letter-spacing:.02em;text-transform:none;font-size:13
         </div>
       </div>
       <div class="ring-caption" aria-live="polite">
+        <div class="round"><span class="rl-k" data-i18n="nowShowing">Now showing</span><span class="rl-v" id="rlStyle"></span><span class="round-dots" id="roundDots" aria-hidden="true"></span></div>
         <div class="code" id="rcCode"></div>
         <div class="nm" id="rcName"></div>
         <p class="spin-hint" aria-hidden="true"><svg viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h20M5 2L1 6l4 4M17 2l4 4-4 4"/></svg><span data-i18n="spinHint">Swipe to spin · tap to view</span></p>
@@ -725,8 +736,11 @@ const CONFIG = {
     blush: "#F3E4DE",      // soft accent background
   },
 
-  // Outfit codes shown on the spinning 3D ring in the hero (6 to 10 works best)
-  heroOutfits: ["BR-07", "SD-03", "EN-02", "NV-01", "BR-01", "EN-09", "RN-08", "NV-06"],
+  // The hero ring keeps rolling; each full turn showcases one style, in this order.
+  // Outfits are picked from the list below by category. ringSlots = cards on the ring (6 to 8).
+  ringRounds: ["Bridal", "Sider", "Engagement", "Navratri", "Rentals"],
+  ringSlots: 6,
+  storyOutfit: "BR-07",   // outfit shown as the finished piece in Our Story
 
   // categories: first one is shown on the card. Add "Rentals" to show it under the Rentals filter.
   // offer: "rent" | "buy" | "both"
@@ -799,7 +813,7 @@ const TEXT = {
   en: {
     navHome:"Home", navCollection:"Collection", navStory:"Our Story", navReviews:"Reviews", navVisit:"Visit & Book", menu:"Menu",
     heroEyebrow:"Bridal · Sider · Engagement · Festive", tagline:CONFIG.business.tagline,
-    ctaBook:"Book a Trial", ctaCollection:"View Collection", spinHint:"Swipe to spin · tap to view",
+    ctaBook:"Book a Trial", ctaCollection:"View Collection", spinHint:"Swipe to spin · tap to view", nowShowing:"Now showing",
     trust1:"Handpicked bridal & festive edits", trust2:"Made-to-measure & alterations", trust3:"Video-call shopping for NRI brides", trust4:"Rent premium outfits for every function",
     colEyebrow:"The Collection", colTitle:"Outfits for every function", colLede:"From haldi to the pheras. Tap any outfit to turn it in 3D, then enquire in one tap.",
     catAll:"All", catBridal:"Bridal", catSider:"Sider", catEngagement:"Engagement", catNavratri:"Navratri", catRentals:"Rentals",
@@ -831,7 +845,7 @@ const TEXT = {
   gu: {
     navHome:"હોમ", navCollection:"કલેક્શન", navStory:"અમારી વાત", navReviews:"રિવ્યૂ", navVisit:"મુલાકાત અને બુકિંગ", menu:"મેનુ",
     heroEyebrow:"બ્રાઇડલ · સાઇડર · સગાઈ · તહેવાર", tagline:CONFIG.business.taglineGu,
-    ctaBook:"ટ્રાયલ બુક કરો", ctaCollection:"કલેક્શન જુઓ", spinHint:"ફેરવવા સ્વાઇપ કરો · જોવા ટેપ કરો",
+    ctaBook:"ટ્રાયલ બુક કરો", ctaCollection:"કલેક્શન જુઓ", spinHint:"ફેરવવા સ્વાઇપ કરો · જોવા ટેપ કરો", nowShowing:"હવે જુઓ",
     trust1:"પસંદગીના બ્રાઇડલ અને ફેસ્ટિવ પોશાક", trust2:"માપ પ્રમાણે સિલાઈ અને ફેરફાર", trust3:"NRI દુલ્હનો માટે વિડિયો કૉલ ખરીદી", trust4:"દરેક પ્રસંગ માટે ભાડે પોશાક",
     colEyebrow:"અમારું કલેક્શન", colTitle:"દરેક પ્રસંગ માટે પોશાક", colLede:"હલ્દીથી ફેરા સુધી. કોઈ પણ પોશાક પર ટેપ કરીને 3D માં ફેરવો અને તરત પૂછો.",
     catAll:"બધા", catBridal:"બ્રાઇડલ", catSider:"સાઇડર", catEngagement:"સગાઈ", catNavratri:"નવરાત્રી", catRentals:"ભાડે",
@@ -1022,7 +1036,7 @@ const TEXT = {
     $("#langToggle").setAttribute("aria-label", lang === "en" ? "Switch to Gujarati" : "Switch to English");
     $("#ratingText").textContent = `${B.googleRating} ${t("onGoogle")} · ${B.googleReviewCount} ${t("reviewsWord")}`;
     $(".tagline-gu").style.display = lang === "gu" ? "none" : "";
-    fillSelects(); renderChips(); renderGrid(false); renderMap(); updateHud(true); setCaption();
+    fillSelects(); renderChips(); renderGrid(false); renderMap(); updateHud(true); setCaption(true);
   }
   $("#langToggle").addEventListener("click", () => {
     lang = lang === "en" ? "gu" : "en";
@@ -1052,63 +1066,90 @@ const TEXT = {
   watchReveal($$(".reveal"));
 
   /* ================= HERO: 3D showroom ring ================= */
+  // The ring keeps rolling, and every full turn showcases one style (CONFIG.ringRounds).
+  // A card switches to the next style's outfit while it passes behind the ring,
+  // so the new style flows in from the back without any visible jump.
   const stage = $("#stage"), stageInner = $("#stageInner"), ring = $("#ring");
-  const heroItems = CONFIG.heroOutfits.map(byCode).filter(Boolean);
-  const N = heroItems.length, STEP = 360 / N;
-  ring.innerHTML = heroItems.map((o, i) => `<div class="rc" data-i="${i}">
-      <img class="main" src="${imgSrc(o, "full")}" alt="${esc(altOf(o))}" draggable="false">
-      <img class="refl" src="${imgSrc(o, "full")}" alt="" aria-hidden="true" draggable="false">
-      <div class="shade"></div></div>`).join("");
+  const ROUNDS = CONFIG.ringRounds.map((c) => ({ cat: c, items: CONFIG.outfits.filter((o) => o.categories.includes(c)) })).filter((r) => r.items.length);
+  const N = Math.max(4, CONFIG.ringSlots || 6), STEP = 360 / N;
+  ring.innerHTML = Array.from({ length: N }, (_, i) => `<div class="rc" data-i="${i}">
+      <img class="main" alt="" draggable="false"><img class="refl" alt="" aria-hidden="true" draggable="false"><div class="shade"></div></div>`).join("");
   const rcs = $$(".rc", ring), shades = rcs.map((c) => $(".shade", c));
-  let R = 0, angle = 0, target = 0, vel = 0, dragging = false, lastX = 0, startX = 0, moved = 0, tilt = -10, ringRaf = 0, autoT = 0, front = -1, scrollTilt = 0;
+  const slotRound = new Array(N).fill(null), slotItem = new Array(N).fill(null);
+  const mod = (a, n) => ((a % n) + n) % n;
+  let R = 0, angle = 0, vel = 0, dragging = false, lastX = 0, moved = 0, tilt = -10, front = -1, scrollTilt = 0;
+  let curRound = -1, holdUntil = 0, glideTo = null, rafId = 0, lastT = 0, drawnKey = "";
   let parX = 0, parY = 0;
+  const roundOf = (i) => Math.floor((angle - i * STEP + 180) / 360);
+  function fillSlot(i) {
+    const r = roundOf(i);
+    if (r === slotRound[i]) return;
+    slotRound[i] = r;
+    const items = ROUNDS[mod(r, ROUNDS.length)].items, o = items[i % items.length], c = rcs[i];
+    slotItem[i] = o;
+    c.children[0].src = c.children[1].src = imgSrc(o, "full");
+    c.children[0].alt = altOf(o);
+  }
   function measureRing() {
     const cw = rcs[0] ? rcs[0].offsetWidth : 160;
-    R = Math.round(cw / (2 * Math.tan(Math.PI / N)) + cw * 0.18);
+    R = Math.round(cw / (2 * Math.tan(Math.PI / N)) + cw * 0.22);
     rcs.forEach((c, i) => (c.style.transform = `rotateY(${i * STEP}deg) translateZ(${R}px)`));
     $$(".arch").forEach((a, k) => (a.style.transform = `translate(-50%,-50%) translateZ(${-R * (k ? 1.9 : 1.3)}px) scale(${k ? 1.9 : 1.45})`));
+    drawnKey = "";
   }
   function drawRing() {
+    const key = angle.toFixed(2) + "|" + scrollTilt.toFixed(2);
+    if (key === drawnKey) return;
+    drawnKey = key;
     ring.style.transform = `translateZ(${-R}px) rotateX(${tilt + scrollTilt}deg) rotateY(${-angle}deg)`;
     let best = -1, bestCos = -2;
     rcs.forEach((c, i) => {
-      const a = ((i * STEP - angle) * Math.PI) / 180, cs = Math.cos(a);
+      fillSlot(i);
+      const cs = Math.cos(((i * STEP - angle) * Math.PI) / 180);
       shades[i].style.opacity = ((1 - cs) * 0.42).toFixed(3);
       c.style.zIndex = Math.round(cs * 100) + 100;
       if (cs > bestCos) { bestCos = cs; best = i; }
     });
-    if (best !== front) { front = best; setCaption(); }
+    if (best !== front || slotItem[best] !== $("#rcName")._o) { front = best; setCaption(); }
   }
-  function setCaption() {
-    const o = heroItems[front]; if (!o) return;
-    $("#rcCode").textContent = `${o.code} · ${catLabel(o.categories[0])}`;
+  function setCaption(force) {
+    const o = slotItem[front]; if (!o) return;
+    $("#rcName")._o = o;
+    $("#rcCode").textContent = o.code;
     $("#rcName").textContent = o.name;
+    const r = mod(roundOf(front), ROUNDS.length);
+    if (r === curRound && !force) return;
+    curRound = r;
+    const lab = $("#rlStyle");
+    lab.textContent = catLabel(ROUNDS[r].cat);
+    lab.classList.remove("swap"); void lab.offsetWidth; lab.classList.add("swap");
+    $("#roundDots").innerHTML = ROUNDS.map((x, k) => `<i class="${k === r ? "on" : ""}"></i>`).join("");
   }
-  function animateRing() {
-    cancelAnimationFrame(ringRaf);
-    const tick = () => {
-      if (!dragging) {
-        if (Math.abs(vel) > 0.05) { angle += vel; vel *= 0.93; target = Math.round(angle / STEP) * STEP; }
-        else { vel = 0; angle += (target - angle) * 0.085; }
+  // continuous roll that slows down as each outfit reaches the front, so every piece gets a moment
+  const ROLL = 30; // degrees per second at full speed (about 3.5 s per outfit, ~20 s per style)
+  function loop(t) {
+    const dt = Math.min(0.05, (t - (lastT || t)) / 1000); lastT = t;
+    if (!dragging) {
+      if (glideTo !== null) {
+        angle += (glideTo - angle) * 0.1;
+        if (Math.abs(glideTo - angle) < 0.05) { angle = glideTo; glideTo = null; holdUntil = t + 2600; }
+      } else if (Math.abs(vel) > 0.05) { angle += vel; vel *= 0.94; holdUntil = t + 2200; }
+      else if (!reduceMotion && t > holdUntil && !document.hidden) {
+        const s = Math.sin(Math.PI * mod(angle / STEP, 1));
+        angle += ROLL * dt * (0.3 + 0.7 * s * s);
       }
-      drawRing();
-      if (dragging || Math.abs(vel) > 0.05 || Math.abs(target - angle) > 0.05) ringRaf = requestAnimationFrame(tick);
-      else { angle = target; drawRing(); }
-    };
-    ringRaf = requestAnimationFrame(tick);
+    }
+    drawRing();
+    rafId = heroVisible ? requestAnimationFrame(loop) : 0;
   }
-  const goTo = (deg) => { target = deg; animateRing(); };
-  function scheduleAuto() {
-    clearTimeout(autoT);
-    if (reduceMotion) return;
-    autoT = setTimeout(() => { if (!dragging && heroVisible && !document.hidden) goTo(target + STEP); scheduleAuto(); }, 3200);
-  }
+  const startRoll = () => { if (!rafId) { lastT = 0; rafId = requestAnimationFrame(loop); } };
+  const glide = (deg) => { vel = 0; glideTo = deg; startRoll(); };
+  const nearestTo = (i) => angle + (mod(i * STEP - angle + 180, 360) - 180);
   let heroVisible = true;
-  new IntersectionObserver(([en]) => (heroVisible = en.isIntersecting)).observe(stage);
+  new IntersectionObserver(([en]) => { heroVisible = en.isIntersecting; if (heroVisible) startRoll(); }).observe(stage);
   stage.addEventListener("pointerdown", (e) => {
-    dragging = true; moved = 0; lastX = startX = e.clientX; vel = 0;
+    dragging = true; moved = 0; lastX = e.clientX; vel = 0; glideTo = null;
     stage.setPointerCapture && stage.setPointerCapture(e.pointerId);
-    animateRing(); clearTimeout(autoT);
   });
   stage.addEventListener("pointermove", (e) => {
     if (dragging) {
@@ -1125,19 +1166,18 @@ const TEXT = {
     if (moved < 6) {
       const card = e.target.closest && e.target.closest(".rc");
       const i = card ? +card.dataset.i : front;
-      if (i === front) openOutfit(heroItems[front], stage);
-      else goTo(target + (((i * STEP - target) % 360) + 540) % 360 - 180);
-    } else { vel = clamp(vel, -14, 14); animateRing(); }
-    scheduleAuto();
+      if (i === front) openOutfit(slotItem[front], stage); else glide(nearestTo(i));
+    } else vel = clamp(vel, -14, 14);
+    startRoll();
   };
   stage.addEventListener("pointerup", endDrag);
   stage.addEventListener("pointercancel", endDrag);
   stage.addEventListener("pointerleave", () => { if (!dragging) { parX = parY = 0; applyParallax(); } });
   stage.tabIndex = 0;
   stage.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") { goTo(target + STEP); scheduleAuto(); }
-    if (e.key === "ArrowLeft") { goTo(target - STEP); scheduleAuto(); }
-    if (e.key === "Enter") openOutfit(heroItems[front], stage);
+    if (e.key === "ArrowRight") glide(Math.round(angle / STEP + 1) * STEP);
+    if (e.key === "ArrowLeft") glide(Math.round(angle / STEP - 1) * STEP);
+    if (e.key === "Enter") openOutfit(slotItem[front], stage);
   });
   function applyParallax() { stageInner.style.transform = `rotateY(${parX * 10}deg) rotateX(${-parY * 6}deg)`; }
   // gentle tilt from the phone's motion sensor (Android; iOS needs a permission prompt, so it is skipped there)
@@ -1387,7 +1427,7 @@ const TEXT = {
       <g fill="${gold}" stroke="#F1D79A" stroke-width=".8">${petals}</g><circle cx="150" cy="150" r="14" fill="#F1D79A"/><circle cx="150" cy="150" r="7" fill="${wine}"/>
       <g fill="${gold}">${dots}</g><circle cx="150" cy="150" r="104" fill="none" stroke="${gold}" stroke-width="1.5" stroke-dasharray="2 5"/>
       <path d="M212 44L250 10" stroke="#ddd" stroke-width="2.5" stroke-linecap="round"/><path d="M214 44Q192 84 207 108" stroke="${gold}" stroke-width="1.4" fill="none"/></svg>`;
-    const fin = byCode(CONFIG.heroOutfits[0]) || CONFIG.outfits[0];
+    const fin = byCode(CONFIG.storyOutfit) || CONFIG.outfits[0];
     $("#pSketch").innerHTML = `<img src="${toUrl(sketch)}" alt="Pencil sketch of a lehenga">`;
     $("#pFabric").innerHTML = `<img src="${fabricUrl(fin)}" alt="Silk fabric swatch with zari border">`;
     $("#pHoop").innerHTML = `<img src="${toUrl(hoop)}" alt="Gold embroidery in a hoop">`;
@@ -1609,7 +1649,8 @@ const TEXT = {
   measureRing(); drawRing();
   onScroll(); onFlyScroll();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { layoutCf(); });
-  if (!reduceMotion) { startShimmer(); scheduleAuto(); }
+  if (!reduceMotion) startShimmer();
+  startRoll();
 })();
 </script>
 </body>
