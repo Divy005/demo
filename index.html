@@ -142,8 +142,8 @@ html[lang="gu"] h2{font-size:clamp(28px,6vw,44px)}
 .arch svg{width:100%;height:100%}
 .ring{position:absolute;left:50%;top:44%;width:0;height:0;transform-style:preserve-3d}
 .rc{--cw:clamp(118px,34vw,196px);position:absolute;left:calc(var(--cw)*-.5);top:calc(var(--cw)*-.667);width:var(--cw);height:calc(var(--cw)*1.333);border-radius:14px;backface-visibility:visible}
-.rc .main{width:100%;height:100%;border-radius:14px;object-fit:cover;box-shadow:0 20px 40px -12px rgba(0,0,0,.7);outline:1.5px solid rgba(241,217,154,.55);outline-offset:-1.5px;background:#2a0b14}
-.rc .refl{position:absolute;left:0;top:100%;width:100%;height:100%;margin-top:6px;border-radius:14px;object-fit:cover;transform:scaleY(-1);opacity:.32;-webkit-mask-image:linear-gradient(to top,#000 0%,transparent 42%);mask-image:linear-gradient(to top,#000 0%,transparent 42%);pointer-events:none}
+.rc .main{width:100%;height:100%;border-radius:14px;object-fit:cover;object-position:50% 18%;box-shadow:0 20px 40px -12px rgba(0,0,0,.7);outline:1.5px solid rgba(241,217,154,.55);outline-offset:-1.5px;background:#2a0b14}
+.rc .refl{position:absolute;left:0;top:100%;width:100%;height:100%;margin-top:6px;border-radius:14px;object-fit:cover;object-position:50% 18%;transform:scaleY(-1);opacity:.32;-webkit-mask-image:linear-gradient(to top,#000 0%,transparent 42%);mask-image:linear-gradient(to top,#000 0%,transparent 42%);pointer-events:none}
 .rc .shade{position:absolute;inset:0;border-radius:14px;background:#12040A;opacity:0;pointer-events:none}
 .floor{position:absolute;left:50%;top:76%;width:min(560px,120vw);height:120px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(241,217,154,.22),rgba(241,217,154,.06) 55%,transparent);pointer-events:none}
 .floor::after{content:"";position:absolute;inset:30% 12%;border-radius:50%;border:1px solid rgba(241,217,154,.25)}
@@ -195,7 +195,7 @@ html[lang="gu"] .spin-hint{letter-spacing:.02em;text-transform:none;font-size:13
 .o-card.tilting .o-media img{transition:transform .08s linear}
 .o-media .bg{transform:translate(calc(var(--px) * -8px),calc(var(--py) * -8px)) scale(1.1)}
 .o-media .fg{transform:translate(calc(var(--px) * 16px),calc(var(--py) * 12px)) scale(1.05)}
-.o-media .photo{transform:translate(calc(var(--px) * 8px),calc(var(--py) * 8px)) scale(1.06)}
+.o-media .photo{object-position:50% 15%;transform:translate(calc(var(--px) * 8px),calc(var(--py) * 8px)) scale(1.06)}
 .o-media .sheen{position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.35),transparent 45%),linear-gradient(115deg,transparent 35%,rgba(255,240,200,.18) 50%,transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none;mix-blend-mode:soft-light}
 .o-card.tilting .sheen{opacity:1}
 .o-tag{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--card) 92%,transparent);font-size:11.5px;font-weight:500;letter-spacing:.06em;color:var(--wine)}
@@ -378,9 +378,13 @@ html[lang="gu"] .nri h3{font-size:22px}
 .turn{position:relative;width:min(62vw,340px);aspect-ratio:3/4;transform-style:preserve-3d;transition:transform .9s var(--ease)}
 .turn.dragging{transition:none}
 .turn .face3{position:absolute;inset:0;border-radius:18px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.8);border:3px solid rgba(241,217,154,.6)}
-.turn .face3 img{width:100%;height:100%;object-fit:cover}
+.turn .face3 img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;background:#F3EEE6}
 .turn .face3.b{transform:rotateY(180deg)}
 .turn .face3.b span{position:absolute;left:12px;bottom:12px;padding:5px 12px;border-radius:999px;background:rgba(255,253,249,.92);font-size:12.5px;color:var(--wine)}
+.thumbs{display:flex;gap:8px;margin-top:10px;position:relative;z-index:2}
+.thumbs button{width:48px;height:62px;padding:0;border-radius:8px;overflow:hidden;border:2px solid rgba(241,217,154,.3);background:none;cursor:pointer}
+.thumbs button[aria-pressed="true"]{border-color:var(--gold-light)}
+.thumbs img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
 .turn-floor{width:70%;height:24px;margin-top:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent)}
 .turn-hint{color:var(--gold-light);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px;display:flex;gap:8px;align-items:center}
 html[lang="gu"] .turn-hint{letter-spacing:.02em;text-transform:none;font-size:13.5px}
@@ -738,7 +742,7 @@ const CONFIG = {
 
   // The hero ring keeps rolling; each full turn showcases one style, in this order.
   // Outfits are picked from the list below by category. ringSlots = cards on the ring (6 to 8).
-  ringRounds: ["Bridal", "Sider", "Engagement", "Navratri", "Rentals"],
+  ringRounds: ["Engagement", "Navratri", "Bridal", "Sider", "Rentals"],
   ringSlots: 6,
   storyOutfit: "BR-07",   // outfit shown as the finished piece in Our Story
 
@@ -746,7 +750,22 @@ const CONFIG = {
   // offer: "rent" | "buy" | "both"
   // art: placeholder drawing used when image is empty.
   //   silhouette: lehenga | saree | gown | choli    pattern: jaal | butti | bandhani | mirror | stripes | paisley | sequin
+  // Optional photo fields: image (front), backImage (shown when the 3D view is turned), gallery (extra close-ups).
   outfits: [
+    { code:"EN-11", name:"Champagne Silk Anarkali with Plum Dupatta", categories:["Engagement","Sider"], offer:"both", rentPrice:null, buyPrice:null,
+      image:"photos/anarkali-front.webp", backImage:"photos/anarkali-back.webp", gallery:["photos/anarkali-detail.webp"],
+      description:"Champagne silk anarkali with a zari neckline and sequinned hem, paired with straight pants and a plum dupatta in a sequin jaal.", fabric:"Silk, silk dupatta", work:"Zari, sequin jaal",
+      art:{ silhouette:"gown", pattern:"sequin", bg:"#EFE6D8", base:"#D8C8AE", top:"#CDBB9E", accent:"#5E1F4F", motif:"#C9A04E", hanger:"#7d6a55" } },
+    { code:"NV-08", name:"Red Bandhani Kurta Set", categories:["Navratri","Rentals"], offer:"both", rentPrice:null, buyPrice:null,
+      image:"photos/bandhani-front.webp", backImage:"photos/bandhani-back.webp",
+      description:"Red bandhani kurta with straight pants and a matching bandhani dupatta edged in gota lace.", fabric:"Cotton silk", work:"Bandhani, gota lace",
+      art:{ silhouette:"saree", pattern:"bandhani", bg:"#F5ECDD", base:"#B3192C", top:"#8F1322", accent:"#C62A2A", motif:"#F6E7C8", hanger:"#7d6a55" } },
+    { code:"SD-09", name:"Rani Pink Patola Silk Saree", categories:["Sider","Bridal"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Soft lichi silk saree in rani pink with an all-over patola weave, a woven zari pallu and orange tassels.", fabric:"Lichi silk", work:"Patola weave, zari pallu, tassels",
+      art:{ silhouette:"saree", pattern:"jaal", bg:"#EFE6D8", base:"#C0186A", top:"#9E1257", accent:"#E8662A", motif:"#E9B44C", hanger:"#7d6a55" } },
+    { code:"NV-11", name:"Kalamkari Tussar Silk Chaniya Choli", categories:["Navratri"], offer:"buy", rentPrice:null, buyPrice:null, image:"",
+      description:"Tussar silk chaniya choli with Kalamkari foil print, a 3-metre flared skirt with a broad zari border and a tasselled dupatta.", fabric:"Dola tussar silk", work:"Foil print, zari border, tassels",
+      art:{ silhouette:"choli", pattern:"paisley", bg:"#F5ECDD", base:"#F1E8D8", top:"#8E1B2A", accent:"#9B1E2E", motif:"#B5452E", hanger:"#7d6a55" } },
     { code:"BR-07", name:"Maroon Zardozi Bridal Lehenga", categories:["Bridal","Rentals"], offer:"both", rentPrice:null, buyPrice:null, image:"",
       description:"Velvet lehenga with hand-done zardozi, a scalloped gold border and a soft net dupatta.", fabric:"Velvet, net dupatta", work:"Zardozi, dabka",
       art:{ silhouette:"lehenga", pattern:"jaal", bg:"#F1E2D6", base:"#7A1F2B", top:"#6A1824", accent:"#C2475C", motif:"#D9B25A", hanger:"#7d6a55" } },
@@ -840,7 +859,7 @@ const TEXT = {
     chat:"Chat with us", chatTitle:"Chat with us", chatText:"WhatsApp chat will be connected in the live version of this website. Customers will tap here and start chatting with the boutique instantly.",
     enqTitle:"Enquire about", enqDate:"Your function date", enqSub:"This is the message the customer will send:", liveNote:"In the live website, this button opens WhatsApp with this message ready to send.",
     close:"Close", fabric:"Fabric", work:"Work", category:"Category", available:"Available to", rent:"Rent", buy:"Buy", rentBuy:"Rent or buy",
-    noticeTitle:"Coming in the live version", dragTurn:"Drag to turn", backView:"Fabric detail",
+    noticeTitle:"Coming in the live version", dragTurn:"Drag to turn", backView:"Fabric detail", backPhoto:"Back view",
   },
   gu: {
     navHome:"હોમ", navCollection:"કલેક્શન", navStory:"અમારી વાત", navReviews:"રિવ્યૂ", navVisit:"મુલાકાત અને બુકિંગ", menu:"મેનુ",
@@ -872,7 +891,7 @@ const TEXT = {
     chat:"અમારી સાથે વાત કરો", chatTitle:"અમારી સાથે વાત કરો", chatText:"લાઇવ વેબસાઇટમાં અહીં WhatsApp ચેટ જોડાશે. ગ્રાહક ટેપ કરીને તરત બુટિક સાથે વાત કરી શકશે.",
     enqTitle:"પૂછપરછ", enqDate:"તમારા પ્રસંગની તારીખ", enqSub:"ગ્રાહક આ સંદેશ મોકલશે:", liveNote:"લાઇવ વેબસાઇટમાં આ બટન આ સંદેશ સાથે WhatsApp ખોલશે.",
     close:"બંધ કરો", fabric:"કાપડ", work:"કામ", category:"કેટેગરી", available:"ઉપલબ્ધ", rent:"ભાડે", buy:"ખરીદી", rentBuy:"ભાડે અથવા ખરીદી",
-    noticeTitle:"લાઇવ વર્ઝનમાં આવશે", dragTurn:"ફેરવવા ખેંચો", backView:"કાપડની વિગત",
+    noticeTitle:"લાઇવ વર્ઝનમાં આવશે", dragTurn:"ફેરવવા ખેંચો", backView:"કાપડની વિગત", backPhoto:"પાછળનો દેખાવ",
   },
 };
 
@@ -1327,9 +1346,10 @@ const TEXT = {
       <div class="turn-wrap" id="turnWrap">
         <div class="turn" id="turn">
           <div class="face3"><img src="${imgSrc(o, "full")}" alt="${esc(altOf(o))}" draggable="false"></div>
-          <div class="face3 b"><img src="${fabricUrl(o)}" alt="" aria-hidden="true" draggable="false"><span>${esc(t("backView"))}</span></div>
+          <div class="face3 b"><img src="${o.backImage ? esc(o.backImage) : fabricUrl(o)}" alt="${o.backImage ? esc(o.name + " – " + t("backPhoto")) : ""}" draggable="false"><span>${esc(t(o.backImage ? "backPhoto" : "backView"))}</span></div>
         </div>
         <div class="turn-floor" aria-hidden="true"></div>
+        ${o.gallery && o.gallery.length ? `<div class="thumbs">${[o.image, ...o.gallery].map((g, k) => `<button type="button" data-thumb="${esc(g)}" aria-label="Photo ${k + 1}" aria-pressed="${k === 0}"><img src="${esc(g)}" alt=""></button>`).join("")}</div>` : ""}
         <p class="turn-hint" aria-hidden="true">${ICON.turn}${esc(t("dragTurn"))}</p>
       </div>
       <div class="view-body">
@@ -1351,6 +1371,11 @@ const TEXT = {
     $("[data-enq-modal]", sheet).addEventListener("click", () => openEnquiry(o, opener));
     $("[data-book-modal]", sheet).addEventListener("click", () => { closeModal(); prefillType(o); goBook(); });
     setupTurntable();
+    $$("[data-thumb]", sheet).forEach((b) => b.addEventListener("click", (e) => {
+      e.stopPropagation();
+      $(".turn .face3 img", sheet).src = b.dataset.thumb;
+      $$("[data-thumb]", sheet).forEach((x) => x.setAttribute("aria-pressed", x === b));
+    }));
   }
   function setupTurntable() {
     const wrap = $("#turnWrap"), turn = $("#turn");
@@ -1358,7 +1383,7 @@ const TEXT = {
     const set = () => (turn.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`);
     turn.classList.add("dragging"); set(); void turn.offsetWidth; turn.classList.remove("dragging");
     if (!reduceMotion) requestAnimationFrame(() => { ry = 0; set(); });
-    wrap.addEventListener("pointerdown", (e) => { down = true; sx = e.clientX; sy = e.clientY; base = ry; turn.classList.add("dragging"); wrap.setPointerCapture && wrap.setPointerCapture(e.pointerId); });
+    wrap.addEventListener("pointerdown", (e) => { if (e.target.closest(".thumbs")) return; down = true; sx = e.clientX; sy = e.clientY; base = ry; turn.classList.add("dragging"); wrap.setPointerCapture && wrap.setPointerCapture(e.pointerId); });
     wrap.addEventListener("pointermove", (e) => { if (!down) return; ry = base + (e.clientX - sx) * 0.6; rx = clamp(-(e.clientY - sy) * 0.15, -12, 12); set(); });
     const up = () => { if (!down) return; down = false; turn.classList.remove("dragging"); ry = Math.round(ry / 180) * 180; rx = 0; set(); };
     wrap.addEventListener("pointerup", up); wrap.addEventListener("pointercancel", up);
