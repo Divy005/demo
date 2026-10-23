@@ -1,139 +1,142 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport" />
-    <title>Aarohi Bridal Studio · Rajkot</title>
-    <meta name="description" content="Bridal, sider, engagement and Navratri wear, designed and stitched in Rajkot. See the collection, book a trial or chat on WhatsApp." />
-    <meta name="theme-color" content="#0f0d0d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Aarohi · Bridal & festive wear, Rajkot</title>
+    <meta name="description" content="A floating gallery of bridal and festive wear from Rajkot. Tap an outfit to see its price and story, book a trial or chat on WhatsApp." />
+    <meta name="theme-color" content="#e9dfcc" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=DM+Mono:wght@400;500&family=Anek+Gujarati:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link href="css/base.css" rel="stylesheet" type="text/css" />
-    <script>
-      document.documentElement.className = 'js';
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Anek+Gujarati:wght@300..600&display=swap" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
-  <body class="loading">
-    <a class="skip" href="#collection">Skip to collection</a>
-    <header class="frame">
-      <a class="frame__title" href="#top" data-nav><span data-bind="name">Aarohi Bridal Studio</span></a>
-      <nav class="frame__links" aria-label="Main">
-        <a class="line" href="#collection" data-nav data-i18n="navCollection">Collection</a>
-        <a class="line" href="#story" data-nav data-i18n="navStory">Story</a>
-        <a class="line" href="#reviews" data-nav data-i18n="navReviews">Reviews</a>
-        <a class="line" href="#visit" data-nav data-i18n="navVisit">Visit</a>
-        <button class="line frame__lang" type="button" id="langToggle" data-i18n="lang">ગુજરાતી</button>
+  <body>
+    <canvas class="paper" id="paper" aria-hidden="true"></canvas>
+
+    <header class="top">
+      <nav class="nav" aria-label="Main">
+        <button type="button" class="nav__item is-active" data-view="collection" data-i18n="navCollection">Collection</button>
+        <button type="button" class="nav__item" data-view="story" data-i18n="navStory">Story</button>
+        <button type="button" class="nav__item" data-view="reviews" data-i18n="navReviews">Reviews</button>
+        <button type="button" class="nav__item" data-view="visit" data-i18n="navVisit">Visit &amp; Connect</button>
       </nav>
-      <p class="frame__tags" data-i18n="tapTitle">Tap a title to see every piece</p>
+      <div class="top__right">
+        <button type="button" class="link" id="langToggle" data-i18n="lang">ગુજરાતી</button>
+        <button type="button" class="link link--underline" data-chat data-i18n="whatsapp">Chat on WhatsApp</button>
+      </div>
     </header>
 
-    <main id="smooth-content">
-      <!-- Intro -->
-      <section class="intro" id="top" aria-labelledby="introTitle">
-        <p class="intro__eyebrow" data-i18n="eyebrow">Bridal · Sider · Engagement · Navratri</p>
-        <h1 class="intro__title" id="introTitle">
-          <span class="intro__name" data-bind="shortName">Aarohi</span>
-          <span class="intro__sub"><span data-bind="nameRest">Bridal Studio</span> — <span data-bind="city">Rajkot</span></span>
-        </h1>
-        <p class="intro__tagline" data-bind="tagline"></p>
-        <p class="intro__tagline intro__tagline--gu" lang="gu" data-bind="taglineGu"></p>
-        <div class="intro__cta">
-          <a class="btn btn--accent" href="#visit" data-nav data-book data-i18n="ctaBook">Book a trial</a>
-          <button class="btn" type="button" data-chat data-i18n="ctaChat">Chat on WhatsApp</button>
-        </div>
-        <p class="intro__scroll" data-i18n="scrollHint">Scroll to see the collection</p>
-      </section>
+    <!-- The floating gallery -->
+    <main class="gallery" id="gallery">
+      <div class="stage" id="stage" role="region" aria-roledescription="3D gallery" aria-label="Outfits. Drag to turn, tap an outfit to see it.">
+        <div class="tiles" id="tiles"></div>
+      </div>
+      <div class="title" id="title">
+        <h1 class="title__name" data-bind="name">Aarohi</h1>
+        <p class="title__sub" data-bind="subtitle"></p>
+      </div>
+      <div class="switch" id="switch">
+        <span class="switch__label" data-i18n="changeView">Change the view</span>
+        <button type="button" class="switch__opt is-active" data-layout="sphere" aria-pressed="true" data-i18n="sphere">sphere</button>
+        <button type="button" class="switch__opt" data-layout="cylinder" aria-pressed="false" data-i18n="cylinder">cylinder</button>
+      </div>
+      <p class="hint" data-i18n="hint">Drag to turn · tap an outfit</p>
+    </main>
 
-      <!-- Collection: one rolling 3D carousel per style, built from js/config.js -->
-      <div class="scene-wrapper" id="collection"></div>
+    <!-- Outfit detail -->
+    <section class="detail" id="detail" aria-labelledby="detailName" hidden>
+      <button type="button" class="close" id="detailClose"><span aria-hidden="true">×</span> <span data-i18n="close">Close</span></button>
+      <div class="detail__title">
+        <p class="detail__code" id="detailCode"></p>
+        <h2 class="detail__name" id="detailName"></h2>
+      </div>
+      <figure class="detail__figure">
+        <img class="detail__img" id="detailImg" alt="" />
+        <div class="detail__thumbs" id="detailThumbs"></div>
+      </figure>
+      <div class="detail__text">
+        <p class="detail__desc" id="detailDesc"></p>
+        <dl class="detail__facts" id="detailFacts"></dl>
+        <div class="detail__actions">
+          <button type="button" class="btn btn--dark" id="detailEnquire" data-i18n="enquire">Enquire on WhatsApp</button>
+          <button type="button" class="btn" id="detailBook" data-i18n="book">Book a trial</button>
+        </div>
+      </div>
+    </section>
 
-      <!-- Story -->
-      <section class="section story" id="story" aria-labelledby="storyLabel">
-        <div class="section__head">
-          <h2 class="label" id="storyLabel" data-i18n="storyLabel">Our story</h2>
-          <span class="sample" data-i18n="sample">Sample text</span>
+    <!-- Story -->
+    <section class="panel" id="panel-story" aria-labelledby="storyTitle" hidden>
+      <div class="panel__inner">
+        <p class="eyebrow"><span data-i18n="storyLabel">The founder’s story</span> <span class="sample" data-i18n="sample">Sample text</span></p>
+        <h2 class="panel__title" id="storyTitle" data-i18n="storyTitle">From a small room in Rajkot</h2>
+        <div class="story">
+          <div class="story__text" id="storyText"></div>
+          <figure class="story__figure"><img id="storyImg" alt="" /></figure>
         </div>
-        <p class="story__text" id="storyText"></p>
-        <div class="story__photos" id="storyPhotos" aria-hidden="true"></div>
-        <div class="story__made">
-          <p class="story__made-title" data-i18n="madeIn">Designed and stitched in Rajkot</p>
-          <p class="muted" data-i18n="custom">Colour, neckline, sleeves, embroidery and fit can all be customised.</p>
-        </div>
-      </section>
+        <p class="story__made"><span data-i18n="madeIn">Designed and stitched in Rajkot</span>. <span data-i18n="custom"></span></p>
+        <p class="story__sign">— <span data-bind="founder"></span>, <span data-bind="fullName"></span></p>
+      </div>
+    </section>
 
-      <!-- Reviews -->
-      <section class="section reviews" id="reviews" aria-labelledby="reviewsLabel">
-        <div class="section__head">
-          <h2 class="label" id="reviewsLabel" data-i18n="reviewsLabel">Reviews</h2>
-          <span class="rating"><span class="stars" aria-hidden="true">★★★★★</span> <span id="ratingText"></span></span>
-        </div>
+    <!-- Reviews -->
+    <section class="panel" id="panel-reviews" aria-labelledby="reviewsTitle" hidden>
+      <div class="panel__inner">
+        <p class="eyebrow"><span id="ratingText"></span></p>
+        <h2 class="panel__title" id="reviewsTitle" data-i18n="reviewsTitle">What our brides say</h2>
         <p class="sample sample--block" data-i18n="sampleReviews">Sample reviews for this demo. Real Google reviews will appear here.</p>
-        <div class="reviews__list" id="reviewList"></div>
+        <div class="reviews" id="reviewList"></div>
         <a class="btn" id="googleLink" href="#" target="_blank" rel="noopener" data-i18n="ctaGoogle">Read all reviews on Google</a>
-      </section>
+      </div>
+    </section>
 
-      <!-- Visit & book -->
-      <section class="section visit" id="visit" aria-labelledby="visitTitle">
-        <div class="section__head">
-          <span class="label" data-i18n="visitLabel">Visit &amp; book</span>
-        </div>
-        <h2 class="display" id="visitTitle" data-i18n="visitTitle">Book a trial at the studio</h2>
-        <div class="visit__grid">
-          <div class="visit__book">
-            <form class="form" id="bookForm" novalidate>
-              <div class="field"><label for="fName" data-i18n="fName">Your name</label><input id="fName" name="name" autocomplete="name" required /><p class="err" data-i18n="errName">Please enter your name.</p></div>
-              <div class="field"><label for="fPhone" data-i18n="fPhone">Phone / WhatsApp</label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91" required /><p class="err" data-i18n="errPhone">Please enter a valid phone number.</p></div>
-              <div class="field"><label for="fDate" data-i18n="fDate">Function date</label><input id="fDate" name="date" type="date" required /><p class="err" data-i18n="errDate">Please choose your function date.</p></div>
-              <div class="field"><label for="fType" data-i18n="fType">Outfit type</label><select id="fType" name="type" required></select><p class="err" data-i18n="errType">Please choose an outfit type.</p></div>
-              <div class="field"><label for="fBudget" data-i18n="fBudget">Budget</label><select id="fBudget" name="budget"></select></div>
-              <div class="field field--full"><label for="fMsg" data-i18n="fMsg">Message (optional)</label><textarea id="fMsg" name="message" rows="2"></textarea></div>
-              <button class="btn btn--accent field--full" type="submit" data-i18n="submit">Request my trial</button>
-            </form>
-            <div class="ready" id="ready" hidden tabindex="-1" role="status">
-              <p class="ready__title" data-i18n="readyTitle">Your trial request is ready</p>
-              <p class="muted" data-i18n="readyText">In the live website, this booking will open WhatsApp with all your details filled in.</p>
-              <pre class="message" id="readyMsg"></pre>
-              <div class="row">
-                <button class="btn btn--accent" type="button" id="copyBooking" data-i18n="copy">Copy message</button>
-                <button class="btn" type="button" id="editBooking" data-i18n="edit">Edit details</button>
-              </div>
-            </div>
-          </div>
+    <!-- Visit & connect -->
+    <section class="panel" id="panel-visit" aria-labelledby="visitTitle" hidden>
+      <div class="panel__inner">
+        <h2 class="panel__title" id="visitTitle" data-i18n="visitTitle">Visit the studio</h2>
+        <div class="visit">
           <div class="visit__info">
-            <dl class="info">
+            <dl class="facts">
               <div><dt data-i18n="address">Address</dt><dd data-bind="address"></dd></div>
               <div><dt data-i18n="timings">Timings</dt><dd><span data-bind="timings"></span><br /><span data-bind="sunday"></span></dd></div>
               <div><dt data-i18n="phone">Phone / WhatsApp</dt><dd data-bind="phoneDisplay"></dd></div>
             </dl>
             <div class="map" id="map"></div>
+            <div class="row">
+              <button type="button" class="btn btn--dark" data-chat data-i18n="whatsapp">Chat on WhatsApp</button>
+              <button type="button" class="btn" id="dirBtn" data-i18n="directions">Get directions</button>
+            </div>
             <div class="nri">
               <p class="nri__title" data-i18n="nriTitle">Can’t visit Rajkot? Shop with us on a video call.</p>
-              <p class="muted" data-i18n="nriText">See outfits live, compare colours in daylight and get help with measurements, from anywhere in India or abroad.</p>
-              <button class="btn" type="button" id="videoCall" data-i18n="ctaVideo">Book a video call</button>
+              <p data-i18n="nriText"></p>
+              <button type="button" class="link link--underline" id="videoCall" data-i18n="ctaVideo">Book a video call</button>
+            </div>
+          </div>
+          <div class="visit__book">
+            <h3 class="visit__subtitle" data-i18n="bookTitle">Book a trial</h3>
+            <form class="form" id="bookForm" novalidate>
+              <div class="field"><label for="fName" data-i18n="fName">Your name</label><input id="fName" name="name" autocomplete="name" required /><p class="err" data-i18n="errName"></p></div>
+              <div class="field"><label for="fPhone" data-i18n="fPhone">Phone / WhatsApp</label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91" required /><p class="err" data-i18n="errPhone"></p></div>
+              <div class="field"><label for="fDate" data-i18n="fDate">Function date</label><input id="fDate" name="date" type="date" required /><p class="err" data-i18n="errDate"></p></div>
+              <div class="field"><label for="fType" data-i18n="fType">Outfit type</label><select id="fType" name="type" required></select><p class="err" data-i18n="errType"></p></div>
+              <div class="field"><label for="fBudget" data-i18n="fBudget">Budget</label><select id="fBudget" name="budget"></select></div>
+              <div class="field"><label for="fMsg" data-i18n="fMsg">Message (optional)</label><textarea id="fMsg" name="message" rows="2"></textarea></div>
+              <button class="btn btn--dark" type="submit" data-i18n="submit">Request my trial</button>
+            </form>
+            <div class="ready" id="ready" hidden tabindex="-1" role="status">
+              <p class="ready__title" data-i18n="readyTitle">Your trial request is ready</p>
+              <p data-i18n="readyText"></p>
+              <pre class="message" id="readyMsg"></pre>
+              <div class="row">
+                <button class="btn btn--dark" type="button" id="copyBooking" data-i18n="copy">Copy message</button>
+                <button class="btn" type="button" id="editBooking" data-i18n="edit">Edit details</button>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <footer class="footer">
-        <p class="footer__name" data-bind="name">Aarohi Bridal Studio</p>
-        <p class="muted"><span data-bind="address"></span> · <span data-bind="timings"></span></p>
-        <p class="footer__note" id="demoNote"></p>
-        <p class="footer__note">3D carousel based on <a class="line" href="https://github.com/codrops/3DCarousel" target="_blank" rel="noopener">On-Scroll 3D Carousel by Codrops</a> (MIT).</p>
-      </footer>
-    </main>
-
-    <!-- One full-screen grid per style, opened from its carousel title -->
-    <div class="preview-wrapper" id="previews"></div>
-
-    <button class="chat-fab" type="button" data-chat aria-controls="chatPop" aria-expanded="false" data-i18n="ctaChat">Chat on WhatsApp</button>
-    <div class="chat-pop" id="chatPop" role="dialog" aria-labelledby="chatTitle" hidden>
-      <p class="chat-pop__title" id="chatTitle" data-i18n="ctaChat">Chat on WhatsApp</p>
-      <p class="muted" data-i18n="chatText"></p>
-      <button class="btn btn--accent" type="button" id="chatToBook" data-i18n="ctaBook">Book a trial</button>
-      <button class="chat-pop__close" type="button" id="chatClose" aria-label="Close">×</button>
-    </div>
+        <p class="note" id="demoNote"></p>
+      </div>
+    </section>
 
     <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
       <div class="sheet__panel" id="sheetPanel"></div>
@@ -141,10 +144,8 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/ScrollSmoother.min.js"></script>
     <script src="js/SplitText.min.js"></script>
     <script src="js/config.js"></script>
-    <script src="js/index.js" type="module"></script>
+    <script src="js/gallery.js"></script>
   </body>
 </html>

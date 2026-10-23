@@ -1,28 +1,19 @@
-# Aarohi Bridal Studio – demo website
+# Aarohi – floating gallery demo
 
-A demo introduction website for a bridal boutique in Rajkot. It's built on
-[On-Scroll 3D Carousel by Codrops](https://github.com/codrops/3DCarousel) (MIT, see
-`LICENSE-codrops-3dcarousel.txt`): each style rolls past as a 3D carousel while you scroll,
-and tapping its title opens a full-screen grid of the outfits.
+A demo introduction website for a bridal boutique in Rajkot. The outfits float around the
+visitor in 3D on aged parchment; "Change the view" switches between a sphere and a cylinder,
+and tapping an outfit flies it to the centre with its name, price and description.
+The menu opens the founder's story, reviews, and Visit & Connect (address, map, WhatsApp,
+trial booking).
 
-No build step: plain HTML, CSS and JavaScript modules. Serve the folder with any static
-server (`python3 -m http.server`); modules don't load from `file://`. Vercel serves it as is.
+No build step: open `index.html` through any static server (`python3 -m http.server`).
+Vercel serves the folder as is.
 
-## Re-using it for a new client
+- `js/config.js` – everything client-specific: business details, outfits and their photos,
+  story, reviews, form options, Gujarati labels
+- `js/gallery.js` – the 3D gallery (CSS 3D, positions computed each frame), the parchment
+  background (drawn on a canvas), transitions (GSAP) and the pages
+- `css/style.css` – styles
+- `photos/` – outfit photos, ideally 2:3 portrait, about 800 × 1200 px, WebP
 
-Everything client-specific is in **`js/config.js`**:
-
-| What | Where |
-| --- | --- |
-| Name, taglines, address, timings, phone | `business` |
-| WhatsApp | `business.whatsappNumber` (e.g. `919876543210`), then `liveMode: true` |
-| Google rating and links | `business.googleRating`, `googleReviewCount`, `googleReviewsUrl`, `mapsUrl` |
-| Colours | `colors` (background, text, muted text, accent) |
-| Carousels and their titles | `styles` (one carousel per style, in order) |
-| Outfits and photos | `outfits` – each outfit's `photos` list; it appears in the carousel of its first category |
-| Form dropdowns | `outfitTypes`, `budgetRanges` |
-| Story and reviews (sample) | `story`, `reviews` |
-| Gujarati labels | `TEXT.gu` |
-
-Photos go in `photos/`, ideally 2:3 portrait, around 800 × 1200 px, as WebP.
-A style only shows up once at least one of its outfits has photos.
+Set `whatsappNumber` and `liveMode: true` in `js/config.js` to make the WhatsApp buttons live.
